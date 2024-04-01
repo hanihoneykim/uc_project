@@ -545,6 +545,10 @@ pre code {
   overflow-y: scroll;
 }
 
+.container-center {
+  height: 100%;
+}
+
 .container,
 .container-fluid,
 .container-sm,
@@ -6410,6 +6414,7 @@ a.close.disabled {
   vertical-align: text-top !important;
 }
 
+
 .bg-primary {
   background-color: #4e73df !important;
 }
@@ -9898,6 +9903,7 @@ a:focus {
   -webkit-animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
   animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
 }
+
 
 .bg-gradient-primary {
   background-color: #4e73df;
