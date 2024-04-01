@@ -47,7 +47,7 @@ EXTERNAL_APPS = [
 
 INTERNAL_APPS = [
     "core",
-    "admin",
+    "user",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
