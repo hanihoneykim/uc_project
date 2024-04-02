@@ -76,15 +76,16 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">익스프레스:</h6>
-                        <a class="collapse-item" href="buttons.html">사용 가능 객실</a>
-                        <a class="collapse-item" href="cards.html">객실 상황 표</a>
-                        <a class="collapse-item" href="cards.html">실 입실 목록</a>
-                        <a class="collapse-item" href="cards.html">실 퇴실 목록</a>
-                        <a class="collapse-item" href="cards.html">입실 예정 목록</a>
-                        <a class="collapse-item" href="cards.html">퇴실 예정 목록</a>
-                        <a class="collapse-item" href="cards.html">전체 고객 목록</a>
-                        <a class="collapse-item" href="cards.html">재실 목록</a>
-                        <a class="collapse-item" href="cards.html">예약 목록</a>
+                        <a class="collapse-item" href="/pms/express/express">익스프레스</a>
+                        <a class="collapse-item" href="/pms/express/room_available">사용 가능 객실</a>
+                        <a class="collapse-item" href="/pms/express/room_indicator">객실 상황 표</a>
+                        <a class="collapse-item" href="/pms/express/actual_arrival_list">실 입실 목록</a>
+                        <a class="collapse-item" href="/pms/express/actual_departure_list">실 퇴실 목록</a>
+                        <a class="collapse-item" href="/pms/express/actual_arrival_list">입실 예정 목록</a>
+                        <a class="collapse-item" href="/pms/express/expected_arrival_list">퇴실 예정 목록</a>
+                        <a class="collapse-item" href="/pms/express/expected_departure_list">전체 고객 목록</a>
+                        <a class="collapse-item" href="/pms/express/global_guest_list">재실 목록</a>
+                        <a class="collapse-item" href="/pms/express/reservation_list">예약 목록</a>
 
                     </div>
                 </div>
@@ -439,18 +440,6 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
                         {% block content %}
                         {% endblock %}
                     </div>
