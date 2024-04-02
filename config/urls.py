@@ -24,6 +24,8 @@ from user.views import UserLogin
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("core/", include("core.urls")),
+    path("pms/", include("pms.urls")),
+    path("cms/", include("cms.urls")),
     path("user/", include("user.urls")),
     path("", UserLogin.as_view(), name="user_login"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

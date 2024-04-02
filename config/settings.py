@@ -50,6 +50,8 @@ INTERNAL_APPS = [
     "core",
     "user",
     "common",
+    "pms",
+    "cms",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
