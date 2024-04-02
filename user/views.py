@@ -12,7 +12,7 @@ from .serializers import UserSerializer
 
 
 class UserLogin(APIView):
-    template_name = "login.html"
+    template_name = "pages/login.html"
     success_url = "/core/dashboard"
 
     def get(self, request):
@@ -45,4 +45,4 @@ class UserLogout(APIView):
 
     def post(self, request):
         logout(request)
-        return redirect(reverse("user_login"))
+        return redirect(reverse("login"))

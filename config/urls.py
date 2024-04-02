@@ -27,5 +27,5 @@ urlpatterns = [
     path("pms/", include("pms.urls")),
     # path("cms/", include("cms.urls")),
     path("user/", include("user.urls")),
-    path("", UserLogin.as_view(), name="user_login"),
+    path("", UserLogin.as_view(), name="login"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
