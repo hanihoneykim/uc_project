@@ -55,3 +55,11 @@ class GlobalGuestListView(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/pms/global_guest_list.html", {"user": user})
+
+
+class InHouseListView(generics.ListCreateAPIView):
+    template_name = "pages/pms/inhouse_list.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/inhouse_list.html", {"user": user})

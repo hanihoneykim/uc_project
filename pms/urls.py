@@ -30,4 +30,9 @@ urlpatterns = [
         views.GlobalGuestListView.as_view(),
         name="global_guest_list",
     ),
+    path(
+        "express/inhouse_list",
+        views.InHouseListView.as_view(),
+        name="inhouse_list",
+    ),
 ]
