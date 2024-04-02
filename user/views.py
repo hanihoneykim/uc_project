@@ -13,7 +13,7 @@ from .serializers import UserSerializer
 
 class UserLogin(APIView):
     template_name = "login.html"
-    success_url = "/core/"
+    success_url = "/core/dashboard"
 
     def get(self, request):
         # GET 요청을 처리하기 위해 템플릿을 렌더링
