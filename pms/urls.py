@@ -22,7 +22,7 @@ urlpatterns = [
     ),
     path(
         "express/expected_departure_list",
-        views.ExpectedArrivalListView.as_view(),
+        views.ExpectedDepartureListView.as_view(),
         name="expected_departure_list",
     ),
 ]

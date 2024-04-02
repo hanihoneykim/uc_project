@@ -41,7 +41,7 @@ class ExpectedArrivalListView(generics.ListCreateAPIView):
         return render(request, "pages/pms/expected_arrival_list.html", {"user": user})
 
 
-class ExpectedDeparListView(generics.ListCreateAPIView):
+class ExpectedDepartureListView(generics.ListCreateAPIView):
     template_name = "pages/pms/expected_departure_list.html"
 
     def get(self, request):
