@@ -47,3 +47,11 @@ class ExpectedDepartureListView(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/pms/expected_departure_list.html", {"user": user})
+
+
+class GlobalGuestListView(generics.ListCreateAPIView):
+    template_name = "pages/pms/global_guest_list.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/global_guest_list.html", {"user": user})

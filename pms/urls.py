@@ -25,4 +25,9 @@ urlpatterns = [
         views.ExpectedDepartureListView.as_view(),
         name="expected_departure_list",
     ),
+    path(
+        "express/global_guest_list",
+        views.GlobalGuestListView.as_view(),
+        name="global_guest_list",
+    ),
 ]
