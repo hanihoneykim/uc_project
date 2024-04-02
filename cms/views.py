@@ -8,3 +8,13 @@ class RateManagementListView(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/cms/rate_management.html", {"user": user})
+
+
+class RoomInventoryManagement(generics.ListAPIView):
+    template_name = "pages/cms/room_inventory_management.html"
+
+    def get(self, request):
+        user = request.user
+        return render(
+            request, "pages/cms/room_inventory_management.html", {"user": user}
+        )
