@@ -31,3 +31,19 @@ class ActualDepartureList(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/pms/actual_departure_list.html", {"user": user})
+
+
+class ExpectedArrivalList(generics.ListCreateAPIView):
+    template_name = "pages/pms/expected_arrival_list.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/expected_arrival_list.html", {"user": user})
+
+
+class ExpectedArrivalList(generics.ListCreateAPIView):
+    template_name = "pages/pms/expected_departure_list.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/expected_departure_list.html", {"user": user})

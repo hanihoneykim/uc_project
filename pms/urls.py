@@ -15,4 +15,14 @@ urlpatterns = [
         views.ActualDepartureList.as_view(),
         name="actual_departure_list",
     ),
+    path(
+        "express/expected_arrival_list",
+        views.ExpectedArrivalList.as_view(),
+        name="expected_arrival_list",
+    ),
+    path(
+        "express/expected_departure_list",
+        views.ExpectedArrivalList.as_view(),
+        name="expected_departure_list",
+    ),
 ]
