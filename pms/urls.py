@@ -7,22 +7,22 @@ urlpatterns = [
     path("express/room_indicator", views.room_indicator, name="room_indicator"),
     path(
         "express/actual_arrival_list",
-        views.ActualArrivalList.as_view(),
+        views.ActualArrivalListView.as_view(),
         name="actual_arrival_list",
     ),
     path(
         "express/actual_departure_list",
-        views.ActualDepartureList.as_view(),
+        views.ActualDepartureListView.as_view(),
         name="actual_departure_list",
     ),
     path(
         "express/expected_arrival_list",
-        views.ExpectedArrivalList.as_view(),
+        views.ExpectedArrivalListView.as_view(),
         name="expected_arrival_list",
     ),
     path(
         "express/expected_departure_list",
-        views.ExpectedArrivalList.as_view(),
+        views.ExpectedArrivalListView.as_view(),
         name="expected_departure_list",
     ),
 ]

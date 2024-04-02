@@ -17,7 +17,7 @@ def room_indicator(request):
     return render(request, "pages/pms/room_indicator.html", {"user": user})
 
 
-class ActualArrivalList(generics.ListCreateAPIView):
+class ActualArrivalListView(generics.ListCreateAPIView):
     template_name = "pages/pms/actual_arrival_list.html"
 
     def get(self, request):
@@ -25,7 +25,7 @@ class ActualArrivalList(generics.ListCreateAPIView):
         return render(request, "pages/pms/actual_arrival_list.html", {"user": user})
 
 
-class ActualDepartureList(generics.ListCreateAPIView):
+class ActualDepartureListView(generics.ListCreateAPIView):
     template_name = "pages/pms/actual_departure_list.html"
 
     def get(self, request):
@@ -33,7 +33,7 @@ class ActualDepartureList(generics.ListCreateAPIView):
         return render(request, "pages/pms/actual_departure_list.html", {"user": user})
 
 
-class ExpectedArrivalList(generics.ListCreateAPIView):
+class ExpectedArrivalListView(generics.ListCreateAPIView):
     template_name = "pages/pms/expected_arrival_list.html"
 
     def get(self, request):
@@ -41,7 +41,7 @@ class ExpectedArrivalList(generics.ListCreateAPIView):
         return render(request, "pages/pms/expected_arrival_list.html", {"user": user})
 
 
-class ExpectedArrivalList(generics.ListCreateAPIView):
+class ExpectedDeparListView(generics.ListCreateAPIView):
     template_name = "pages/pms/expected_departure_list.html"
 
     def get(self, request):
