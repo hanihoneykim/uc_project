@@ -79,3 +79,11 @@ class NightAudit(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/pms/night_audit.html", {"user": user})
+
+
+class OutOfOrder(generics.ListCreateAPIView):
+    template_name = "pages/pms/out_of_order.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/out_of_order.html", {"user": user})

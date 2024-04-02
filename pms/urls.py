@@ -45,4 +45,9 @@ urlpatterns = [
         views.NightAudit.as_view(),
         name="night_audit",
     ),
+    path(
+        "house_keeping/out_of_order",
+        views.OutOfOrder.as_view(),
+        name="out_of_order",
+    ),
 ]
