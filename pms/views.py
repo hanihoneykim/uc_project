@@ -63,3 +63,11 @@ class InHouseListView(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/pms/inhouse_list.html", {"user": user})
+
+
+class ReservationListView(generics.ListCreateAPIView):
+    template_name = "pages/pms/reservation_list.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/reservation_list.html", {"user": user})
