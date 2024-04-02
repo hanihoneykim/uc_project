@@ -35,4 +35,14 @@ urlpatterns = [
         views.InHouseListView.as_view(),
         name="inhouse_list",
     ),
+    path(
+        "express/reservation_list",
+        views.ReservationListView.as_view(),
+        name="reservation_list",
+    ),
+    path(
+        "cashiering/night_audit",
+        views.NightAudit.as_view(),
+        name="night_audit",
+    ),
 ]

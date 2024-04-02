@@ -71,3 +71,11 @@ class ReservationListView(generics.ListCreateAPIView):
     def get(self, request):
         user = request.user
         return render(request, "pages/pms/reservation_list.html", {"user": user})
+
+
+class NightAudit(generics.ListCreateAPIView):
+    template_name = "pages/pms/night_audit.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/night_audit.html", {"user": user})

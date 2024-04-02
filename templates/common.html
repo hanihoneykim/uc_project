@@ -102,7 +102,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">정산 관리:</h6>
-                        <a class="collapse-item" href="utilities-color.html">일 마감</a>
+                        <a class="collapse-item" href="/pms/cashiering/night_audit">일 마감</a>
                     </div>
                 </div>
             </li>
@@ -118,7 +118,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">하우스 키핑:</h6>
-                        <a class="collapse-item" href="utilities-color.html">고장 객실 일괄 등록</a>
+                        <a class="collapse-item" href="/pms/house_keeping/out_of_order">고장 객실 일괄 등록</a>
                     </div>
                 </div>
             </li>
@@ -440,11 +440,9 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                        {% block content %}
-                        {% endblock %}
-                    </div>
-                </div>
-            </div>
+                {% block content %}
+                {% endblock %}
+
 
                 <!-- Footer -->
             <footer class="sticky-footer bg-white">
