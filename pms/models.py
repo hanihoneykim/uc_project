@@ -36,8 +36,16 @@ class Reservation(models.Model):
     remarks = models.TextField(null=True, blank=True)
 
 
-class CheckIn(models.Model):
+class CheckInOutStatus(models.Model):
+    CHECKINOUT_CHOICES = [
+        ("in", "IN"),
+        ("out", "OUT"),
+    ]
+
     reservation = models.ForeignKey(
         "pms.Reservation", null=True, related_name="check_in", on_delete=models.SET_NULL
     )
     check_in_time = models.TimeField(null=True, blank=True)
+    check_in_out_status = models.CharField(
+        max_length=3, choices=CHECKINOUT_CHOICES, blank=True, null=True
+    )
