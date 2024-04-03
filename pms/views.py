@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from datetime import date
+from datetime import date, datetime
 from rest_framework import generics, status
 from .models import Room, Reservation, CheckInOutStatus
 from django.core.paginator import Paginator
@@ -102,7 +102,8 @@ class ExpectedArrivalListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        today = date.today()
+        # today = date.today()
+        today = datetime.strptime("2024-04-01", "%Y-%m-%d").date()
         check_in = CheckInOutStatus.objects.filter(
             check_in_out_status__isnull=True, reservation__check_in_date=today
         )
@@ -121,7 +122,17 @@ class ExpectedDepartureListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/expected_departure_list.html", {"user": user})
+        # today = date.today()
+        today = datetime.strptime("2024-04-01", "%Y-%m-%d").date()
+        check_out = CheckInOutStatus.objects.filter(reservation__check_out_date=today)
+        paginator = Paginator(check_out, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/expected_departure_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class GlobalGuestListView(generics.ListCreateAPIView):
@@ -129,7 +140,15 @@ class GlobalGuestListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/global_guest_list.html", {"user": user})
+        global_guest = Reservation.objects.all()
+        paginator = Paginator(global_guest, 20)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/global_guest_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class InHouseListView(generics.ListCreateAPIView):

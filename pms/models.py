@@ -8,10 +8,16 @@ class Room(models.Model):
     room_number = models.CharField(max_length=20, null=True, blank=True)
     type = models.CharField(max_length=20, null=True, blank=True)
     status = models.CharField(max_length=20, null=True, blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=0)
 
 
 class Reservation(models.Model):
+    MIA_CHOICES = [
+        ("m", "M"),
+        ("i", "I"),
+        ("a", "A"),
+    ]
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, null=False, blank=False)
     group_id = models.CharField(max_length=20, null=True, blank=True)
     room = models.ForeignKey(
@@ -21,8 +27,8 @@ class Reservation(models.Model):
     check_in_date = models.DateField(null=True, blank=True)
     check_out_date = models.DateField(null=True, blank=True)
     length_of_stay = models.IntegerField(null=True, blank=True)
-    services = models.DecimalField(max_digits=10, decimal_places=2)
-    total_room_charge = models.DecimalField(max_digits=10, decimal_places=2)
+    services = models.DecimalField(max_digits=10, decimal_places=0)
+    total_room_charge = models.DecimalField(max_digits=10, decimal_places=0)
     vendor_name = models.CharField(max_length=30, null=True, blank=True)
     rate_type = models.CharField(max_length=20, null=True, blank=True)
     market_segment = models.CharField(max_length=20, null=True, blank=True)
@@ -34,6 +40,7 @@ class Reservation(models.Model):
     folio_number = models.CharField(max_length=20, null=True, blank=True)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     remarks = models.TextField(null=True, blank=True)
+    m_i_a = models.CharField(max_length=3, choices=MIA_CHOICES, blank=True, null=True)
 
 
 class CheckInOutStatus(models.Model):
