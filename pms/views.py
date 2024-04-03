@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from datetime import date
 from rest_framework import generics, status
-from .models import Room, Reservation, CheckIn
+from .models import Room, Reservation, CheckInOutStatus
 from django.core.paginator import Paginator
 
 
@@ -8,13 +9,29 @@ class ExpressListView(generics.ListCreateAPIView):
     template_name = "pages/pms/express.html"
 
     def get(self, request):
-        rooms = Room.objects.all()
+        room_0 = Room.objects.all()[0]
+        room_1 = Room.objects.all()[1]
+        room_2 = Room.objects.all()[2]
+        room_3 = Room.objects.all()[3]
+        room_4 = Room.objects.all()[4]
+        room_5 = Room.objects.all()[5]
+        room_6 = Room.objects.all()[6]
+        room_7 = Room.objects.all()[7]
         user = request.user
-        paginator = Paginator(rooms, 10)
-        page_number = request.GET.get("page", "1")
-        paging = paginator.get_page(page_number)
         return render(
-            request, "pages/pms/express.html", {"user": user, "paging": paging}
+            request,
+            "pages/pms/express.html",
+            {
+                "user": user,
+                "room_0": room_0,
+                "room_1": room_1,
+                "room_2": room_2,
+                "room_3": room_3,
+                "room_4": room_4,
+                "room_5": room_5,
+                "room_6": room_6,
+                "room_7": room_7,
+            },
         )
 
 
@@ -53,7 +70,7 @@ class ActualArrivalListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        check_in = CheckIn.objects.all()
+        check_in = CheckInOutStatus.objects.filter(check_in_out_status="in")
         paginator = Paginator(check_in, 10)
         page_number = request.GET.get("page", "1")
         paging = paginator.get_page(page_number)
@@ -69,7 +86,15 @@ class ActualDepartureListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/actual_departure_list.html", {"user": user})
+        check_in = CheckInOutStatus.objects.filter(check_in_out_status="out")
+        paginator = Paginator(check_in, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/actual_departure_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class ExpectedArrivalListView(generics.ListCreateAPIView):
@@ -77,7 +102,18 @@ class ExpectedArrivalListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/expected_arrival_list.html", {"user": user})
+        today = date.today()
+        check_in = CheckInOutStatus.objects.filter(
+            check_in_out_status__isnull=True, reservation__check_in_date=today
+        )
+        paginator = Paginator(check_in, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/expected_arrival_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class ExpectedDepartureListView(generics.ListCreateAPIView):
