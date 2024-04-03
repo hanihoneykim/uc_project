@@ -1,0 +1,102 @@
+[
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "1F",
+            "room_number": "101",
+            "type": "DTS",
+            "status": "OC",
+            "price": 100000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "2F",
+            "room_number": "203",
+            "type": "Double",
+            "status": "VC",
+            "price": 150000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "3F",
+            "room_number": "302",
+            "type": "DTS",
+            "status": "VD",
+            "price": 200000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "5F",
+            "room_number": "502",
+            "type": "DTS",
+            "status": "VC",
+            "price": 150000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "3F",
+            "room_number": "305",
+            "type": "FCM",
+            "status": "OD",
+            "price": 200000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "1F",
+            "room_number": "105",
+            "type": "FCM",
+            "status": "OD",
+            "price": 80000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "6F",
+            "room_number": "605",
+            "type": "FCM",
+            "status": "VC",
+            "price": 90000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "1F",
+            "room_number": "107",
+            "type": "FCM",
+            "status": "OD",
+            "price": 110000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "3F",
+            "room_number": "307",
+            "type": "FCM",
+            "status": "VC",
+            "price": 110000
+        }
+    },
+    {
+        "model": "pms.Room",
+        "fields": {
+            "floor": "2F",
+            "room_number": "206",
+            "type": "DTS",
+            "status": "OD",
+            "price": 110000
+        }
+    }
+]
