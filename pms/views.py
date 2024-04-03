@@ -156,7 +156,19 @@ class InHouseListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/inhouse_list.html", {"user": user})
+        # today = date.today()
+        today = datetime.strptime("2024-04-01", "%Y-%m-%d").date()
+        check_in = CheckInOutStatus.objects.filter(
+            check_in_out_status="in", reservation__check_in_date=today
+        )
+        paginator = Paginator(check_in, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/inhouse_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class ReservationListView(generics.ListCreateAPIView):
@@ -164,7 +176,15 @@ class ReservationListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/reservation_list.html", {"user": user})
+        reservations = Reservation.objects.all()
+        paginator = Paginator(reservations, 30)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/reservation_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class NightAudit(generics.ListCreateAPIView):

@@ -52,78 +52,36 @@
                                 <th style="white-space: nowrap;">요금타입</th>
                                 <th style="white-space: nowrap;">시장</th>
                                 <th style="white-space: nowrap;">예약경로</th>
-                                <th style="white-space: nowrap;">국적</th>
                                 <th style="white-space: nowrap;">휴대폰</th>
                                 <th style="white-space: nowrap;">비고</th>
+                                <th style="white-space: nowrap;">VIP 게스트</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in paging %}
                             <tr>
-                                <td style="white-space: nowrap;">RR</td>
-                                <td style="white-space: nowrap;">202411</td>
-                                <td style="white-space: nowrap;">0301</td>
-                                <td style="white-space: nowrap;">김지원</td>
-                                <td style="white-space: nowrap;">2024-04-03</td>
-                                <td style="white-space: nowrap;">10:45</td>
-                                <td style="white-space: nowrap;">2024-04-09</td>
-                                <td style="white-space: nowrap;">5</td>
-                                <td style="white-space: nowrap;">DTS</td>
-                                <td style="white-space: nowrap;">540,000</td>
-                                <td style="white-space: nowrap;">0</td>
-                                <td style="white-space: nowrap;">540,000</td>
-                                <td style="white-space: nowrap;">야놀자</td>
-                                <td style="white-space: nowrap;">TRA</td>
-                                <td style="white-space: nowrap;">OTA</td>
-                                <td style="white-space: nowrap;">CMS</td>
-                                <td style="white-space: nowrap;">KOR</td>
-                                <td style="white-space: nowrap;">010-1233-1234</td>
-                                <td style="white-space: nowrap;">-</td>
+                                <td style="white-space: nowrap;">{{ item.reservation_status }}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation_number }}</td>
+                                <td style="white-space: nowrap;">{{ item.room.room_number}}</td>
+                                <td style="white-space: nowrap;">{{ item.guest_name}}</td>
+                                <td style="white-space: nowrap;">{{ item.check_in_date}}</td>
+                                <td style="white-space: nowrap;">{{ item.check_in_time}}</td>
+                                <td style="white-space: nowrap;">{{ item.check_out_date}}</td>
+                                <td style="white-space: nowrap;"> {{ item.length_of_stay }}</td>
+                                <td style="white-space: nowrap;">{{ item.room.type }}</td>
+                                <td style="white-space: nowrap;">{{ item.room.price }}</td>
+                                <td style="white-space: nowrap;"> {{ item.services }}</td>
+                                <td style="white-space: nowrap;"> {{ item.total_room_charge }}</td>
+                                <td style="white-space: nowrap;">{{ item.vendor_name  }}</td>
+                                <td style="white-space: nowrap;">{{ item.rate_type }}</td>
+                                <td style="white-space: nowrap;">{{ item.market_segment }}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation_path }}</td>
+                                <td style="white-space: nowrap;">{{ item.phone_number }}</td>
+                                <td style="white-space: nowrap;">{{ item.remarks }}</td>
+                                <td style="white-space: nowrap;">{{ item.vip_guest }}</td>
                                 
                             </tr>
-                            <tr>
-                                <td style="white-space: nowrap;">RR</td>
-                                <td style="white-space: nowrap;">202411</td>
-                                <td style="white-space: nowrap;">0201</td>
-                                <td style="white-space: nowrap;">김하은</td>
-                                <td style="white-space: nowrap;">2024-04-01</td>
-                                <td style="white-space: nowrap;">16:45</td>
-                                <td style="white-space: nowrap;">2024-04-05</td>
-                                <td style="white-space: nowrap;">4</td>
-                                <td style="white-space: nowrap;">DTS</td>
-                                <td style="white-space: nowrap;">280,000</td>
-                                <td style="white-space: nowrap;">0</td>
-                                <td style="white-space: nowrap;">280,000</td>
-                                <td style="white-space: nowrap;">익스피디아</td>
-                                <td style="white-space: nowrap;">TRA</td>
-                                <td style="white-space: nowrap;">OTA</td>
-                                <td style="white-space: nowrap;">CMS</td>
-                                <td style="white-space: nowrap;">KOR</td>
-                                <td style="white-space: nowrap;">010-1233-1234</td>
-                                <td style="white-space: nowrap;">가족4명</td>
-                                
-                            </tr>
-                            <tr>
-                                <td style="white-space: nowrap;">RR</td>
-                                <td style="white-space: nowrap;">202411</td>
-                                <td style="white-space: nowrap;">0201</td>
-                                <td style="white-space: nowrap;">James Kim</td>
-                                <td style="white-space: nowrap;">2024-04-01</td>
-                                <td style="white-space: nowrap;">16:45</td>
-                                <td style="white-space: nowrap;">2024-04-05</td>
-                                <td style="white-space: nowrap;">4</td>
-                                <td style="white-space: nowrap;">DTS</td>
-                                <td style="white-space: nowrap;">280,000</td>
-                                <td style="white-space: nowrap;">0</td>
-                                <td style="white-space: nowrap;">280,000</td>
-                                <td style="white-space: nowrap;">익스피디아</td>
-                                <td style="white-space: nowrap;">TRA</td>
-                                <td style="white-space: nowrap;">OTA</td>
-                                <td style="white-space: nowrap;">CMS</td>
-                                <td style="white-space: nowrap;">KOR</td>
-                                <td style="white-space: nowrap;">010-1233-1234</td>
-                                <td style="white-space: nowrap;">가족4명</td>
-                                
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
