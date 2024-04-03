@@ -1,0 +1,773 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">요금 관리</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">요금 관리</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <!-- 테이블 해더 -->
+                <!--
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 table_header">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="dataTable_filter" class="dataTables_filter">
+                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th style="background-color: rgba(0,0,0,0.05);" colspan="2">요금 카테고리</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/01 월</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/02 화</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/03 수</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/04 목</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/05 금</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/06 토</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/07 일</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="7">유에이치 종로 <br><span style="color: red;">AUTO ON</span></th>
+                            <th style="white-space: nowrap;">전체 판매상태</th>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+
+                        </tr>
+                        <tr>
+                            <th style="white-space: nowrap;">점유율</th>
+                            <td>100</td>
+                            <td>95</td>
+                            <td>100</td>
+                            <td>90</td>
+                            <td>95</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <th style="white-space: nowrap;">잔여 / 예약</th>
+                            <td>0 / 19</td>
+                            <td>0 / 21</td>
+                            <td>1 / 20</td>
+                            <td>2 / 19</td>
+                            <td>0 / 20</td>
+                            <td>1 / 19</td>
+                            <td>0 / 20</td>
+                        </tr>
+                        <tr>
+                            <th style="white-space: nowrap;">판매 가능 객실</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="5" style="background-color:#dcbcfd42;">스위트</th>
+                            <th style="background-color:#dcbcfd42;">판매상태</th>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">마감원인</th>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">마감원인</th>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" style="background-color:#dcbcfd42;"><i class="fas fa-angle-right mr-2"></i>Room Only (해외 OTA)</th>
+                            <th style="background-color:#dcbcfd42;">요금세트</th>
+                            <td>LV3D</td>
+                            <td>LV3D</td>
+                            <td>LV3T</td>
+                            <td>LV3D</td>
+                            <td>LV3F</td>
+                            <td>LV3S</td>
+                            <td>LV3D</td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">요금</th>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>672,367</td>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>724,345</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="5" style="background-color:#dcbcfd42;">스위트노윈도우</th>
+                            <th style="background-color:#dcbcfd42;">판매상태</th>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">마감원인</th>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">마감원인</th>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" style="background-color:#dcbcfd42;"><i class="fas fa-angle-right mr-2"></i>Room Only (해외 OTA)</th>
+                            <th style="background-color:#dcbcfd42;">요금세트</th>
+                            <td>LV3D</td>
+                            <td>LV3D</td>
+                            <td>LV3T</td>
+                            <td>LV3D</td>
+                            <td>LV3F</td>
+                            <td>LV3S</td>
+                            <td>LV3D</td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">요금</th>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>672,367</td>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>724,345</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="5" style="background-color:#dcbcfd42;">패밀리스위트</th>
+                            <th style="background-color:#dcbcfd42;">판매상태</th>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success">오픈</button></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger">자동 마감</button></td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">마감원인</th>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">마감원인</th>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        선택
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">마감</a>
+                                        <a class="dropdown-item" href="#">점유율</a>
+                                        <a class="dropdown-item" href="#">컷오프</a>
+                                        <a class="dropdown-item" href="#">할당</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" style="background-color:#dcbcfd42;"><i class="fas fa-angle-right mr-2"></i>Room Only (해외 OTA)</th>
+                            <th style="background-color:#dcbcfd42;">요금세트</th>
+                            <td>LV3D</td>
+                            <td>LV3D</td>
+                            <td>LV3T</td>
+                            <td>LV3D</td>
+                            <td>LV3F</td>
+                            <td>LV3S</td>
+                            <td>LV3D</td>
+                        </tr>
+                        <tr>
+                            <th style="background-color:#dcbcfd42;">요금</th>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>672,367</td>
+                            <td>546,667</td>
+                            <td>546,667</td>
+                            <td>724,345</td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+{% endblock %}

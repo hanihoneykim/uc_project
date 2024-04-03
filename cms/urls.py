@@ -12,4 +12,9 @@ urlpatterns = [
         views.RoomInventoryManagement.as_view(),
         name="room_inventory_management",
     ),
+    path(
+        "channel/product_inventory_management",
+        views.ProductInventoryManagement.as_view(),
+        name="product_inventory_management",
+    ),
 ]

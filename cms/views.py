@@ -18,3 +18,13 @@ class RoomInventoryManagement(generics.ListAPIView):
         return render(
             request, "pages/cms/room_inventory_management.html", {"user": user}
         )
+
+
+class ProductInventoryManagement(generics.ListAPIView):
+    template_name = "pages/cms/product_inventory_management.html"
+
+    def get(self, request):
+        user = request.user
+        return render(
+            request, "pages/cms/product_inventory_management.html", {"user": user}
+        )
