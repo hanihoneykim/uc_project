@@ -18,9 +18,12 @@ class RoomAvailableListView(generics.ListCreateAPIView):
         return render(request, "pages/pms/room_available.html", {"user": user})
 
 
-def room_indicator(request):
-    user = request.user
-    return render(request, "pages/pms/room_indicator.html", {"user": user})
+class RoomIndicatorListView(generics.ListCreateAPIView):
+    template_name = "pages/pms/room_indicator.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/room_indicator.html", {"user": user})
 
 
 class ActualArrivalListView(generics.ListCreateAPIView):
