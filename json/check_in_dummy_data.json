@@ -1,0 +1,86 @@
+[
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "d3bffecd816b4ac5b78945f2a79c30fa",
+            "check_in_time": "20:46:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "7b5ee2565fbb43fb9366f0d8b6057105",
+            "check_in_time": "21:48:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "9d9e4d45f46a4ae89eaf5b7cafd5ac2e",
+            "check_in_time": "04:21:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "26b2f845e5df4bb880d2525722b6ce9c",
+            "check_in_time": "03:41:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "53ceec025b2440ba8cfe59ab40b71500",
+            "check_in_time": "01:55:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "77c2406430034143a78eddf7386cb8ef",
+            "check_in_time": "02:58:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "9cb8d07a9d1d4061b2084b3b7885b10c",
+            "check_in_time": "04:06:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "4106c8c26eae496396e0a86b96573edd",
+            "check_in_time": "02:34:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "9e507166b711447491275dab4bc55812",
+            "check_in_time": "14:51:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "5327e5519a62426fa503023ac1e18e75",
+            "check_in_time": "05:47:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "8208276c7d4442f483c86b1e46b0e516",
+            "check_in_time": "00:42:31"
+        }
+    },
+    {
+        "model": "pms.CheckIn",
+        "fields": {
+            "reservation": "1aa2553d3afd4399a06e78e21e7aa843",
+            "check_in_time": "00:46:31"
+        }
+    }
+]

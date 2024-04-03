@@ -14,9 +14,9 @@ class Room(models.Model):
 class Reservation(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, null=False, blank=False)
     group_id = models.CharField(max_length=20, null=True, blank=True)
-    # room = models.ForeignKey(
-    #     "pms.Room", null=True, related_name="reservations", on_delete=models.SET_NULL
-    # )
+    room = models.ForeignKey(
+        "pms.Room", null=True, related_name="reservations", on_delete=models.SET_NULL
+    )
     guest_name = models.CharField(max_length=30, null=True, blank=True)
     check_in_date = models.DateField(null=True, blank=True)
     check_out_date = models.DateField(null=True, blank=True)
@@ -35,9 +35,9 @@ class Reservation(models.Model):
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     remarks = models.TextField(null=True, blank=True)
 
-    #  더미데이터를 위한 필드
-    room_number = models.CharField(max_length=20, null=True, blank=True)
-    room_type = models.CharField(max_length=20, null=True, blank=True)
-    room_rate = models.DecimalField(
-        max_digits=10, decimal_places=2, null=True, blank=True
+
+class CheckIn(models.Model):
+    reservation = models.ForeignKey(
+        "pms.Reservation", null=True, related_name="check_in", on_delete=models.SET_NULL
     )
+    check_in_time = models.TimeField(null=True, blank=True)

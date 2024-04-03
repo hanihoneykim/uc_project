@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics, status
-from .models import Room
+from .models import Room, Reservation, CheckIn
 from django.core.paginator import Paginator
 
 
@@ -23,7 +23,14 @@ class RoomAvailableListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/room_available.html", {"user": user})
+        rooms = Room.objects.all()
+        user = request.user
+        paginator = Paginator(rooms, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request, "pages/pms/room_available.html", {"user": user, "paging": paging}
+        )
 
 
 class RoomIndicatorListView(generics.ListCreateAPIView):
@@ -31,7 +38,14 @@ class RoomIndicatorListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/room_indicator.html", {"user": user})
+        rooms = Room.objects.all()
+        user = request.user
+        paginator = Paginator(rooms, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request, "pages/pms/room_indicator.html", {"user": user, "paging": paging}
+        )
 
 
 class ActualArrivalListView(generics.ListCreateAPIView):
@@ -39,7 +53,15 @@ class ActualArrivalListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/actual_arrival_list.html", {"user": user})
+        check_in = CheckIn.objects.all()
+        paginator = Paginator(check_in, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/actual_arrival_list.html",
+            {"user": user, "paging": paging},
+        )
 
 
 class ActualDepartureListView(generics.ListCreateAPIView):
