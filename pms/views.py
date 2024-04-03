@@ -2,9 +2,12 @@ from django.shortcuts import render
 from rest_framework import generics, status
 
 
-def express(request):
-    user = request.user
-    return render(request, "pages/pms/express.html", {"user": user})
+class ExpressListView(generics.ListCreateAPIView):
+    template_name = "pages/pms/express.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/express.html", {"user": user})
 
 
 def room_available(request):
