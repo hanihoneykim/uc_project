@@ -40,7 +40,45 @@ class Reservation(models.Model):
     folio_number = models.CharField(max_length=20, null=True, blank=True)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     remarks = models.TextField(null=True, blank=True)
+
     m_i_a = models.CharField(max_length=3, choices=MIA_CHOICES, blank=True, null=True)
+    reservation_status = models.CharField(max_length=10, null=True, blank=True)
+    room_count = models.IntegerField(null=True, blank=True)
+    guest_count = models.IntegerField(null=True, blank=True)
+    reservation_path = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    vip_guest = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    ota_number = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    reservation_number = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    sales_person = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    cancellation_date = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    reservation_date = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    booker_number = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    deposit_number = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    deposit_amount = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    vehicle_number = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
+    verifier = models.CharField(
+        max_length=20, choices=MIA_CHOICES, blank=True, null=True
+    )
 
 
 class CheckInOutStatus(models.Model):
