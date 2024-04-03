@@ -1,13 +1,21 @@
 from django.shortcuts import render
 from rest_framework import generics, status
+from .models import Room
+from django.core.paginator import Paginator
 
 
 class ExpressListView(generics.ListCreateAPIView):
     template_name = "pages/pms/express.html"
 
     def get(self, request):
+        rooms = Room.objects.all()
         user = request.user
-        return render(request, "pages/pms/express.html", {"user": user})
+        paginator = Paginator(rooms, 10)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request, "pages/pms/express.html", {"user": user, "paging": paging}
+        )
 
 
 class RoomAvailableListView(generics.ListCreateAPIView):

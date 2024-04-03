@@ -2,9 +2,17 @@ from django.urls import path
 from pms import views
 
 urlpatterns = [
-    path("express/express", views.express, name="express"),
-    path("express/room_available", views.room_available, name="room_available"),
-    path("express/room_indicator", views.room_indicator, name="room_indicator"),
+    path("express/express", views.ExpressListView.as_view(), name="express"),
+    path(
+        "express/room_available",
+        views.RoomAvailableListView.as_view(),
+        name="room_available",
+    ),
+    path(
+        "express/room_indicator",
+        views.RoomIndicatorListView.as_view(),
+        name="room_indicator",
+    ),
     path(
         "express/actual_arrival_list",
         views.ActualArrivalListView.as_view(),

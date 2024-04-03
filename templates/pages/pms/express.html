@@ -48,11 +48,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for room in paging %}
                         <tr>
-                            <td>2F</td>
-                            <td>0201</td>
-                            <td>DTS</td>
-                            <td><span class="badge bg-secondary">OC</span></td>
+                            <td>{{ room.floor }}</td>
+                            <td>{{ room.room_number }}</td>
+                            <td>{{ room.type }}</td>
+                            <td><span class="badge bg-secondary">{{ room.status }}</span></td>
                             <td style="background-color: #99c0ff;">&nbsp; 김하은</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td></td>
@@ -62,10 +63,10 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>2F</td>
-                            <td>0203</td>
-                            <td>DTS</td>
-                            <td><span class="badge bg-info">VC</span></td>
+                            <td>{{ room.floor }}</td>
+                            <td>{{ room.room_number }}</td>
+                            <td>{{ room.type }}</td>
+                            <td><span class="badge bg-secondary">{{ room.status }}</span></td>
                             <td></td>
                             <td></td>
                             <td style="background-color: #ffe699;">&nbsp; 김희원</td>
@@ -75,10 +76,10 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>3F</td>
-                            <td>0301</td>
-                            <td>FCM</td>
-                            <td><span class="badge bg-success">VD</span></td>
+                            <td>{{ room.floor }}</td>
+                            <td>{{ room.room_number }}</td>
+                            <td>{{ room.type }}</td>
+                            <td><span class="badge bg-secondary">{{ room.status }}</span></td>
                             <td></td>
                             <td style="background-color: #99c0ff;">&nbsp; 박진아</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
@@ -88,10 +89,10 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>2F</td>
-                            <td>0201</td>
-                            <td>DTS</td>
-                            <td><span class="badge bg-secondary">OC</span></td>
+                            <td>{{ room.floor }}</td>
+                            <td>{{ room.room_number }}</td>
+                            <td>{{ room.type }}</td>
+                            <td><span class="badge bg-secondary">{{ room.status }}</span></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -100,12 +101,14 @@
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                         </tr>
-                        
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    
 
 </div>
 <!-- /.container-fluid -->
