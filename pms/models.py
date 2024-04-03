@@ -94,3 +94,9 @@ class CheckInOutStatus(models.Model):
     check_in_out_status = models.CharField(
         max_length=3, choices=CHECKINOUT_CHOICES, blank=True, null=True
     )
+
+
+class Task(models.Model):
+    task_number = models.CharField(max_length=10, null=True, blank=True)
+    task_name = models.CharField(max_length=20, null=True, blank=True)
+    task_status = models.CharField(max_length=10, null=True, blank=True)
