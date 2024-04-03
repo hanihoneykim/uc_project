@@ -10,9 +10,12 @@ class ExpressListView(generics.ListCreateAPIView):
         return render(request, "pages/pms/express.html", {"user": user})
 
 
-def room_available(request):
-    user = request.user
-    return render(request, "pages/pms/room_available.html", {"user": user})
+class RoomAvailableListView(generics.ListCreateAPIView):
+    template_name = "pages/pms/room_available.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/pms/room_available.html", {"user": user})
 
 
 def room_indicator(request):
