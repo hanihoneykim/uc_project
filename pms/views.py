@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from datetime import date, datetime
 from rest_framework import generics, status
-from .models import Room, Reservation, CheckInOutStatus
+from .models import Room, Reservation, CheckInOutStatus, Task
 from django.core.paginator import Paginator
 
 
@@ -192,7 +192,17 @@ class NightAudit(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/night_audit.html", {"user": user})
+        tasks = Task.objects.all()
+        task_1 = Task.objects.all()[0:3]
+        task_2 = Task.objects.all()[4:7]
+        paginator = Paginator(tasks, 30)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/night_audit.html",
+            {"user": user, "paging": paging, "task_1": task_1, "task_2": task_2},
+        )
 
 
 class OutOfOrder(generics.ListCreateAPIView):
@@ -200,4 +210,14 @@ class OutOfOrder(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        return render(request, "pages/pms/out_of_order.html", {"user": user})
+        rooms_10 = Room.objects.all()[0:10]
+        rooms_3 = Room.objects.all()[3:7]
+        user = request.user
+        paginator = Paginator(rooms_10, 20)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/pms/out_of_order.html",
+            {"user": user, "paging": paging, "rooms_3": rooms_3},
+        )

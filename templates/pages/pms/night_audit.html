@@ -45,64 +45,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in paging %}
                             <tr>
-                                <td>0201</td>
-                                <td>DTS</td>
-                                <td>OCC</td>
+                                <td>{{ item.task_number }}</td>
+                                <td>{{ item.task_name }}</td>
+                                <td>{{ item.task_status }}</td>
                             </tr>
-                            <tr>
-                                <td>0301</td>
-                                <td>FCM</td>
-                                <td>VAC</td>
-                            </tr>
-                            <tr>
-                                <td>0402</td>
-                                <td>FST</td>
-                                <td>VAC</td>
-                            </tr>
-                            <tr>
-                                <td>0201</td>
-                                <td>DTS</td>
-                                <td>OCC</td>
-                            </tr>
-                            <tr>
-                                <td>0301</td>
-                                <td>FCM</td>
-                                <td>VAC</td>
-                            </tr>
-                            <tr>
-                                <td>0402</td>
-                                <td>FST</td>
-                                <td>VAC</td>
-                            </tr><tr>
-                                <td>0201</td>
-                                <td>DTS</td>
-                                <td>OCC</td>
-                            </tr>
-                            <tr>
-                                <td>0301</td>
-                                <td>FCM</td>
-                                <td>VAC</td>
-                            </tr>
-                            <tr>
-                                <td>0402</td>
-                                <td>FST</td>
-                                <td>VAC</td>
-                            </tr><tr>
-                                <td>0201</td>
-                                <td>DTS</td>
-                                <td>OCC</td>
-                            </tr>
-                            <tr>
-                                <td>0301</td>
-                                <td>FCM</td>
-                                <td>VAC</td>
-                            </tr>
-                            <tr>
-                                <td>0402</td>
-                                <td>FST</td>
-                                <td>VAC</td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -141,17 +90,18 @@
                         <thead>
                             <tr>
                                 <th>번호</th>
-                                <th>화면명</th>
+                                <th>업무명</th>
                                 <th>보기</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in task_1 %}
                             <tr>
-                                <td>0201</td>
-                                <td>DTS</td>
+                                <td>{{ item.task_number }}</td>
+                                <td>{{ item.task_name }}</td>
                                 <td><button type="button" class="btn btn-light btn-sm">보기</button></td>
                             </tr>
-                        
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -185,17 +135,18 @@
                             <thead>
                                 <tr>
                                     <th>번호</th>
-                                    <th>화면명</th>
+                                    <th>업무명</th>
                                     <th>보기</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>0201</td>
-                                    <td>DTS</td>
-                                    <td><button type="button" class="btn btn-light btn-sm">보기</button></td>
-                                </tr>
-                            
+                                {% for item in task_2 %}
+                                    <tr>
+                                        <td>{{ item.task_number }}</td>
+                                        <td>{{ item.task_name }}</td>
+                                        <td><button type="button" class="btn btn-light btn-sm">보기</button></td>
+                                    </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
