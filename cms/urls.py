@@ -57,4 +57,9 @@ urlpatterns = [
         views.SystemManagementHistory.as_view(),
         name="system_management_history",
     ),
+    path(
+        "report/faq",
+        views.FAQListView.as_view(),
+        name="faq",
+    ),
 ]

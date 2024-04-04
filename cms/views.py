@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics, status
 from pms.models import Reservation
 from django.core.paginator import Paginator
-from .models import RatePackage, Channel, CMSReservation, History
+from .models import RatePackage, Channel, CMSReservation, History, FAQ
 
 
 class RateManagementListView(generics.ListCreateAPIView):
@@ -147,4 +147,29 @@ class SystemManagementHistory(generics.ListAPIView):
             request,
             "pages/cms/system_management_history.html",
             {"user": user, "paging": paging},
+        )
+
+
+class FAQListView(generics.ListAPIView):
+    template_name = "pages/cms/faq.html"
+
+    def get(self, request):
+        user = request.user
+        faq_1 = FAQ.objects.all()[0]
+        faq_2 = FAQ.objects.all()[1]
+        faq_3 = FAQ.objects.all()[2]
+        faq_4 = FAQ.objects.all()[3]
+        faq_5 = FAQ.objects.all()[4]
+
+        return render(
+            request,
+            "pages/cms/faq.html",
+            {
+                "user": user,
+                "faq_1": faq_1,
+                "faq_2": faq_2,
+                "faq_3": faq_3,
+                "faq_4": faq_4,
+                "faq_5": faq_5,
+            },
         )
