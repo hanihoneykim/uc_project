@@ -1,0 +1,103 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">판매 분석</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">판매 분석</h6>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="btn-group btn-group-sm me-2 mt-4 mx-4" role="group" aria-label="First group" style="width: 50%;">
+                <button type="button" class="btn btn-outline-secondary">판매 분석_일간</button>
+                <button type="button" class="btn btn-outline-secondary">판매 분석_주간</button>
+                <button type="button" class="btn btn-outline-secondary">판매 분석_월간</button>
+            </div>
+        </div>
+        
+        <div class="card mt-4" style="width: 96%; margin-left: 20px;">
+            <div class="card-header">
+                당일 판매 실적
+            </div>
+            <div class="card-body justify-content-center" style="width: 96%; margin-left: 35%;">
+                <img src="https://play-lh.googleusercontent.com/QFl5RnJnCaApuwSY5GkyPk1YqFRdeq-64EHaeNeYId3HwY9Uqjf5JkRVeATZxuuKez5o" alt="agoda_icon" style="width: 100px;">
+                <span style="font-size: 20px; color:rgb(63, 63, 63); font-weight: bold;">Agoda</span>
+                <span style="font-size: 20px; color:rgb(63, 63, 63); font-weight: bold;">8건</span>
+            </div>
+            
+        </div>
+        
+
+        <div class="card-body mt-2">
+            <div class="table-responsive">
+                <!-- 테이블 해더 -->
+                <!--
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 table_header">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="dataTable_filter" class="dataTables_filter">
+                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th style="background-color: rgba(0,0,0,0.1);">채널</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">예약</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">숙박일수</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">인원수</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">매츨</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">객단가</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">취소</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">노쇼</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th style="background-color: rgba(0,0,0,0.1);">합계</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">41</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">189</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">125</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">46876236</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">789543</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">2</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">0</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for item in paging %}
+                        <tr>
+                            <td>{{ item.channel_name }}</td>
+                            <td>{{ item.reservation_count }}</td>
+                            <td>{{ item.length_of_stay }}</td>
+                            <td>{{ item.number_of_guests }}</td>
+                            <td>{{ item.revenue }}</td>
+                            <td>{{ item.average_revenue_per_customer }}</td>
+                            <td>{{ item.cancellation }}</td>
+                            <td>{{ item.no_show }}</td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+{% endblock %}
