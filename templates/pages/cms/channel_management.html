@@ -10,28 +10,28 @@
         <h1 class="h3 mb-0 text-gray-800">채널 관리</h1>
     </div>
 
-    <div class="row">
+    <div class="row mx-4">
 
         <div class="m-4">
 
-            <div class="card mb-4">
+            <div class="card mb-1">
                 <div class="card-body" style="width: 100%;">
-                    <span style="margin-right: 50px;">계약 채널 수 (무료 채널 제외)</span>
-                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 50px;" value="5">
-                    <span style="margin-right: 50px;">|</span>
-                    <span style="margin-right: 50px;">실 연동 채널 수 (무료 채널)</span>
-                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 370px;" value="5 (2)">
+                    <span style="margin-right: 40px; font-weight: bold;">계약 채널 수 (무료 채널 제외)</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 40px;" value="5">
+                    <span style="margin-right: 40px;">|</span>
+                    <span style="margin-right: 40px; font-weight: bold;">실 연동 채널 수 (무료 채널)</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 330px;" value="5 (2)">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-between mx-4" style="width: 9   0%;">
 
         <!-- Earnings (Monthly) Card Example -->
         {% for item in channels %}
         <div class="col-xl-3 col-md-6 mb-4 m-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card border-left-primary shadow h-100 py-2" style="width: 300px;">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
