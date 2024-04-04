@@ -1,0 +1,64 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">채널 관리</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="m-4">
+
+            <div class="card mb-4">
+                <div class="card-body" style="width: 100%;">
+                    <span style="margin-right: 50px;">계약 채널 수 (무료 채널 제외)</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 50px;" value="5">
+                    <span style="margin-right: 50px;">|</span>
+                    <span style="margin-right: 50px;">실 연동 채널 수 (무료 채널)</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 370px;" value="5 (2)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        {% for item in channels %}
+        <div class="col-xl-3 col-md-6 mb-4 m-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                {% if item.integration_status %}
+                                    <span class="text-success">연동 완료</span>
+                                {% else %}
+                                    <span class="text-danger">연동 실패</span>
+                                {% endif %}
+                            </div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <span class="text-secondary">{{ item.integration_date }}</span>
+                                
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ item.channel_name }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
