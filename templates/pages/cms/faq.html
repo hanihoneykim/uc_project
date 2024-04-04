@@ -1,0 +1,118 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">FAQ</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">FAQ</h6>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="btn-group btn-group-sm me-2 mt-4 mx-4" role="group" aria-label="First group" style="width: 90%;">
+                <button type="button" class="btn btn-outline-secondary">자주하는 질문</button>
+                <button type="button" class="btn btn-outline-secondary">CMS 기능 변경</button>
+                <button type="button" class="btn btn-outline-secondary">예약</button>
+                <button type="button" class="btn btn-outline-secondary">요금 관리</button>
+                <button type="button" class="btn btn-outline-secondary">인벤토리 관리</button>
+                <button type="button" class="btn btn-outline-secondary">채널연동</button>
+                <button type="button" class="btn btn-outline-secondary">부킹엔진</button>
+                <button type="button" class="btn btn-outline-secondary">기타</button>
+            </div>
+        </div>
+        
+
+        <div class="row justify-content-center my-5">
+            <div class="accordion" id="accordionExample" style="width: 90%;">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                [{{ faq_1.category }}] {{ faq_1.title }}
+                            </button>
+                        </h2>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ faq_1.content }}
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="card-header" id="headingTwoo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwoo" aria-expanded="true" aria-controls="collapseTwoo">
+                                [{{ faq_2.category }}] {{ faq_2.title }}
+                            </button>
+                        </h2>
+                    </div>
+                
+                    <div id="collapseTwoo" class="collapse" aria-labelledby="headingTwoo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ faq_2.content }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                [{{ faq_3.category }}] {{ faq_3.title }}
+                            </button>
+                        </h2>
+                    </div>
+                
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ faq_3.content }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                [{{ faq_4.category }}] {{ faq_4.title }}
+                            </button>
+                        </h2>
+                    </div>
+                
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ faq_4.content }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                [{{ faq_5.category }}] {{ faq_5.title }}
+                            </button>
+                        </h2>
+                    </div>
+                
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ faq_5.content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+</div>
+<!-- /.container-fluid -->
+{% endblock %}
