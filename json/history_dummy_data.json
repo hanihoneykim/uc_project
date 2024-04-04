@@ -1,0 +1,122 @@
+[
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-08T12:30:00",
+            "program_name": "요금관리",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-10T08:45:00",
+            "program_name": "인벤토리 관리_객실별",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-15T14:20:00",
+            "program_name": "인벤토리 관리_상품별",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-20T10:10:00",
+            "program_name": "요금세트 생성",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-22T16:50:00",
+            "program_name": "요금세트 적용",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-25T09:15:00",
+            "program_name": "예약 목록",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-28T13:40:00",
+            "program_name": "잔여객실현황",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-04-30T11:55:00",
+            "program_name": "히스토리",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-05-02T15:25:00",
+            "program_name": "시스템 관리 히스토리",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    },
+    {
+        "model": "cms.History",
+        "fields": {
+            "user_id": "uhaitest",
+            "user_name": "AI플랫폼",
+            "connection_date": "2024-05-05T17:00:00",
+            "program_name": "판매분석",
+            "process": "오픈",
+            "process_content": null,
+            "user_ip": "192.613.*.521"
+        }
+    }
+]

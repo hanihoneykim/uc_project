@@ -1,0 +1,78 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">시스템 관리 히스토리</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">시스템 관리 히스토리</h6>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="btn-group btn-group-sm me-2 mt-4 mx-4" role="group" aria-label="First group" style="width: 50%;">
+                <button type="button" class="btn btn-outline-secondary">프로그램 사용 이력</button>
+                <button type="button" class="btn btn-outline-secondary">사용자 로그인 이력</button>
+                <button type="button" class="btn btn-outline-secondary">사용자권한 변경 이력</button>
+            </div>
+        </div>
+        
+
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <!-- 테이블 해더 -->
+                <!--
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 table_header">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="dataTable_filter" class="dataTables_filter">
+                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th style="background-color: rgba(0,0,0,0.1);">사용자 ID</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">사용자 명</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">접속 일자</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">프로그램 명</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">처리 구분</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">처리 내용</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">사용자 IP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in paging %}
+                        <tr>
+                            <td>{{ item.user_id }}</td>
+                            <td>{{ item.user_name }}</td>
+                            <td>{{ item.connection_date }}</td>
+                            <td>{{ item.program_name }}</td>
+                            <td>{{ item.process }}</td>
+                            <td>{{ item.pricess_content }}</td>
+                            <td>{{ item.user_ip }}</td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+{% endblock %}
