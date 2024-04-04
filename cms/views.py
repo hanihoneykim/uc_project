@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics, status
+from .models import RatePackage, Channel
 
 
 class RateManagementListView(generics.ListCreateAPIView):
@@ -27,4 +28,73 @@ class ProductInventoryManagement(generics.ListAPIView):
         user = request.user
         return render(
             request, "pages/cms/product_inventory_management.html", {"user": user}
+        )
+
+
+class RatePackageCreate(generics.ListCreateAPIView):
+    template_name = "pages/cms/making_rate_package.html"
+
+    def get(self, request):
+        user = request.user
+        data_1 = RatePackage.objects.filter(room_type="스위트")
+        data_2 = RatePackage.objects.filter(room_type="스위트노윈도우")
+        data_3 = RatePackage.objects.filter(room_type="마루스위트")
+        data_4 = RatePackage.objects.filter(room_type="패밀리스위트")
+        return render(
+            request,
+            "pages/cms/making_rate_package.html",
+            {
+                "user": user,
+                "data_1": data_1,
+                "data_2": data_2,
+                "data_3": data_3,
+                "data_4": data_4,
+            },
+        )
+
+
+class ChannelInformationConfiguration(generics.ListAPIView):
+    template_name = "pages/cms/channel_information_configuration.html"
+
+    def get(self, request):
+        user = request.user
+        return render(
+            request, "pages/cms/channel_information_configuration.html", {"user": user}
+        )
+
+
+class ChannelManagement(generics.ListAPIView):
+    template_name = "pages/cms/channel_management.html"
+
+    def get(self, request):
+        user = request.user
+        channels = Channel.objects.all()
+        return render(
+            request,
+            "pages/cms/channel_management.html",
+            {"user": user, "channels": channels},
+        )
+
+
+class DataSynchronization(generics.ListAPIView):
+    template_name = "pages/cms/data_synchronization.html"
+
+    def get(self, request):
+        user = request.user
+        return render(
+            request,
+            "pages/cms/data_synchronization.html",
+            {"user": user},
+        )
+
+
+class RemainingRoomAvailability(generics.ListAPIView):
+    template_name = "pages/cms/remaining_room_availability.html"
+
+    def get(self, request):
+        user = request.user
+        return render(
+            request,
+            "pages/cms/remaining_room_availability.html",
+            {"user": user},
         )
