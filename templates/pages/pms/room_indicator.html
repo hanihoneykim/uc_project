@@ -69,41 +69,19 @@
                             <th style="background-color: rgba(0,0,0,0.1);">상태</th>
                             <th style="background-color: rgba(0,0,0,0.1);">기간</th>
                             <th style="background-color: rgba(0,0,0,0.1);">요금</th>
+                            <th style="background-color: rgba(0,0,0,0.1);">상세보기</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for room in paging %}
+                        {% for item in paging %}
                         <tr>
-                            <td>{{ room.floor }}</td>
-                            <td>{{ room.room_number }}</td>
-                            <td>{{ room.type }}</td>
-                            <td><span class="badge bg-info">{{ room.status }}</span></td>
-                            <td>04/01 - 04/03</td>
-                            <td>150,000</td>
-                        </tr>
-                        <tr>
-                            <td>{{ room.floor }}</td>
-                            <td>{{ room.room_number }}</td>
-                            <td>{{ room.type }}</td>
-                            <td><span class="badge bg-info">{{ room.status }}</span></td>
-                            <td>04/02 - 04/04</td>
-                            <td>210,000</td>
-                        </tr>
-                        <tr>
-                            <td>{{ room.floor }}</td>
-                            <td>{{ room.room_number }}</td>
-                            <td>{{ room.type }}</td>
-                            <td><span class="badge bg-info">{{ room.status }}</span></td>
-                            <td>04/01 - 04/09</td>
-                            <td>630,000</td>
-                        </tr>
-                        <tr>
-                            <td>{{ room.floor }}</td>
-                            <td>{{ room.room_number }}</td>
-                            <td>{{ room.type }}</td>
-                            <td><span class="badge bg-info">{{ room.status }}</span></td>
-                            <td>04/02 - 04/08</td>
-                            <td>420,000</td>
+                            <td>{{ item.room.floor }}</td>
+                            <td>{{ item.room.room_number }}</td>
+                            <td>{{ item.room.type }}</td>
+                            <td><span class="badge bg-info">{{ item.room.status }}</span></td>
+                            <td>{{ item.check_in_date }} - {{ item.check_out_date }}</td>
+                            <td>{{item.room.price}}</td>
+                            <td><button type="button" class="btn btn-light btn-sm detailButton" data-toggle="modal" data-target="#detailModal" data-guest-name="{{ item.guest_name }}" data-check-in-date="{{ item.check_in_date }}" data-check-out-date="{{ item.check_out_date }}">상세보기</button></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -113,5 +91,45 @@
     </div>
 
 </div>
-<!-- /.container-fluid -->
+
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="detailModalLabel">상세 정보</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <!-- 상세 정보 표시 -->
+                <p>이름: <span id="guestName"></span></p>
+                <p>체크인 날짜: <span id="checkInDate"></span></p>
+                <p>체크아웃 날짜: <span id="checkOutDate"></span></p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 상세보기 모달이 열릴 때 실행되는 함수
+    $('#detailModal').on('show.bs.modal', function (event) {
+        // 클릭한 버튼에 연결된 데이터를 가져옵니다.
+        var button = $(event.relatedTarget); // 클릭한 버튼
+        var guestName = button.data('guest-name'); // 게스트 이름
+        var checkInDate = button.data('check-in-date'); // 체크인 날짜
+        var checkOutDate = button.data('check-out-date'); // 체크아웃 날짜
+
+        // 모달에 데이터를 표시합니다.
+        var modal = $(this);
+        modal.find('#guestName').text(guestName);
+        modal.find('#checkInDate').text(checkInDate);
+        modal.find('#checkOutDate').text(checkOutDate);
+    });
+</script>
+
+
 {% endblock %}

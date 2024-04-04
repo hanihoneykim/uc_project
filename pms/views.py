@@ -55,9 +55,9 @@ class RoomIndicatorListView(generics.ListCreateAPIView):
 
     def get(self, request):
         user = request.user
-        rooms = Room.objects.all()
+        reservations = Reservation.objects.all()
         user = request.user
-        paginator = Paginator(rooms, 10)
+        paginator = Paginator(reservations, 10)
         page_number = request.GET.get("page", "1")
         paging = paginator.get_page(page_number)
         return render(
