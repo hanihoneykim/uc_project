@@ -23,8 +23,19 @@ class RatePackage(models.Model):
 
 class Channel(models.Model):
     channel_name = models.CharField(max_length=20, null=True, blank=True)
-    integration_status = models.BooleanField(default=False)
-    integration_date = models.DateField(null=True, blank=True)
+    integration_status = models.BooleanField(default=False)  # 연동상태
+    integration_date = models.DateField(null=True, blank=True)  # 연동일자
+
+    # 더미데이터를 위한 필드 (추후 Reservation model과 연결해 serializer로 계산 구현 예정)
+    reservation_count = models.IntegerField(null=True, blank=True)  # 예약수
+    length_of_stay = models.IntegerField(null=True, blank=True)  # 숙박일수
+    number_of_guests = models.IntegerField(null=True, blank=True)  # 인원수
+    revenue = models.DecimalField(max_digits=10, decimal_places=0, default=0)  # 매출
+    average_revenue_per_customer = models.DecimalField(
+        max_digits=10, decimal_places=0, default=0
+    )  # 객단가
+    cancellation = models.IntegerField(null=True, blank=True)  # 취소
+    no_show = models.IntegerField(null=True, blank=True)  # 노쇼
 
 
 class CMSReservation(models.Model):
