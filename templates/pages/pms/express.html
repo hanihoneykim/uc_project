@@ -83,7 +83,7 @@
                             <td><span class="badge bg-secondary">{{ room_0.status }}</span></td>
                             <td></td>
                             <td></td>
-                            <td style="background-color: #99c0ff;">&nbsp; Jame Kim</td>
+                            <td id="jameKim" style="background-color: #99c0ff;">&nbsp; Jame Kim</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td></td>
@@ -94,7 +94,7 @@
                             <td>{{ room_1.room_number }}</td>
                             <td>{{ room_1.type }}</td>
                             <td><span class="badge bg-secondary">{{ room_1.status }}</span></td>
-                            <td style="background-color: #ffe699;">&nbsp; Paul Patrick</td>
+                            <td id="paulPatrick" style="background-color: #ffe699;">&nbsp; Paul Patrick</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td></td>
@@ -108,7 +108,7 @@
                             <td>{{ room_2.type }}</td>
                             <td><span class="badge bg-secondary">{{ room_2.status }}</span></td>
                             <td></td>
-                            <td style="background-color: #99c0ff;">&nbsp; Nakashima</td>
+                            <td id="nakashima" style="background-color: #99c0ff;">&nbsp; Nakashima</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td></td>
                             <td></td>
@@ -122,7 +122,7 @@
                             <td><span class="badge bg-secondary">{{ room_3.status }}</span></td>
                             <td></td>
                             <td></td>
-                            <td style="background-color: #ffe699;">&nbsp; Ulrik Grönvall</td>
+                            <td id="ulrikGrönvall" style="background-color: #ffe699;">&nbsp; Ulrik Grönvall</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td></td>
@@ -134,7 +134,7 @@
                             <td>{{ room_4.type }}</td>
                             <td><span class="badge bg-secondary">{{ room_4.status }}</span></td>
                             <td></td>
-                            <td style="background-color: #99c0ff;">&nbsp; Hui Lim</td>
+                            <td id="huiLim" style="background-color: #99c0ff;">&nbsp; Hui Lim</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td></td>
@@ -151,7 +151,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td style="background-color: #ffe699;">&nbsp; JAI KIYOTAKA</td>
+                            <td id="jaiKiyotaka" style="background-color: #ffe699;">&nbsp; JAI KIYOTAKA</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                         </tr>
                         <tr>
@@ -162,7 +162,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td style="background-color: #99c0ff;">&nbsp; Marcelina Lianto	</td>
+                            <td id="marcelinaLianto" style="background-color: #99c0ff;">&nbsp; Marcelina Lianto	</td>
                             <td style="background-color: #99c0ff;">&nbsp;</td>
                             <td></td>
                             <td></td>
@@ -174,7 +174,7 @@
                             <td><span class="badge bg-secondary">{{ room_7.status }}</span></td>
                             <td></td>
                             <td></td>
-                            <td style="background-color: #ffe699;">&nbsp; Paul Patrick</td>
+                            <td id="joeyChin" style="background-color: #ffe699;">&nbsp; Joey Chin</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td style="background-color: #ffe699;">&nbsp;</td>
                             <td></td>
@@ -185,11 +185,547 @@
             </div>
         </div>
     </div>
-
-    
-
 </div>
-<!-- /.container-fluid -->
+
+
+<!-- jameKim 모달 -->
+<div id="jameKimModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_0.room_number}} {{ room_0.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    JameKim<br>
+                    2024-04-03-2024-04-05 2박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 342,543<br>
+                    선수금 : 0<br>
+                    잔액: 2,0104,345<br>
+                    비고:<br> 
+                    연락처: +46 737212197 / 스웨덴 8박 / 전체청소 1, 5 / 라이터 1개 대여 / 이불 1개 추가 15,000원 결제 필요 / 티오더 스낵 서비스 나초 세트  체크아웃시 결제요망 (10,000원)<br>
+
+                    4/3 히노끼 카드 결제 완료.<br>
+                    
+                    3/4 왓츠앱 통해 사전안내문 전송 완료. /2명 부부 /<br>
+                    
+                    3/30 플라워 카드 완<br>
+                    
+                    3/31 투숙하는 동안 계획있으시면 오늘 계획에 일부만이라도 추천도와드리겠다고 여쭤보았으나,  무시하심.<br>
+                    4/1 한국에서 bbq레스토랑 추천도와드려도 괜찮은지 여쭤보고, 추천 해달라고 하셔서, 한국에서 가장맛있는 bbq 집으로 추천해드리겠다고 말씀드리고, '돈돼지 명동'안내해드림. 그리고 왓츠앱통해서 추천하는 메뉴 사진 보내드리고, 추천메뉴도 같이 안내 해드림. 감사하다고 이모티콘 보내주심.<br>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="paulPatrickModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_1.room_number}} {{ room_1.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Paul Patrick<br>
+                    2024-04-01-2024-04-03 2박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 212,543<br>
+                    선수금 : 0<br>
+                    잔액: 2,104,345<br>
+                    비고:<br> 
+                    63 09337203272 / 캐나다 3박 / 3명 가족<br> 
+
+                    1인 추가 90,000 카드완<br> 
+                    4/4 배쓰밤 히노끼, 상탈, 플라워 카드 결제 완료<br> 
+
+                    3/9 와츠앱으로 사전안내문 전송 완<br> 
+
+                    4/4 오늘 계획있으신지 여쭤보니, 명동거리 걸을거라고 하셔서, 좋아하시는 음식여쭤보고, 너의 추천을 듣고싶다고 하셔서 코리안 bbq로 유명한 명동 육통령 추천 도와드림. 여자아기가 디저트를 좋아한다고 하셔서 명동 포엠 추천도와드림. 딸기케이크도 좋아한다고 하셔서 카페드파리 추천 도와드림. 너무 감사하다고 하심.<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="nakashimaModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_2.room_number}} {{ room_2.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Nakashima<br>
+                    2024-04-02-2024-04-03 1박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 512,543<br>
+                    선수금 : 0<br>
+                    잔액: 3,104,345<br>
+                    비고:<br> 
+                    852-98036255/ 국적모름3박/ 신세계 쿠폰1 / 가족 2명 (성인 2명)<br> 
+                    특이사항:본701,702 일행<br> 
+                    3/28 왓츠앱으로 사전안내문 전송 완<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ulrikGrönvallModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_3.room_number}} {{ room_3.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Ulrik Grönvall<br>
+                    2024-04-03-2024-04-05 2박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 412,543<br>
+                    선수금 : 0<br>
+                    잔액: 1,104,345<br>
+                    비고:<br> 
+                    이메일: joey_yee_88@hotmail.com / 말레이시아 1박<br> 
+                    가족 3명 (성인 2명, 아이 1명) / 왓츠앱<br> 
+                    객실 여권 안내완<br> 
+
+                    5일 체크아웃 후 신201로 룸무브<br> 
+
+                    아침 5~6시에 체크아웃 할 예정 짐은 다 싼 후에 프론트에서 짐 회수후 보관 뒤 새로운 방으로 이동요망<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="huiLimModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_4.room_number}} {{ room_4.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Hui Lim<br>
+                    2024-04-02-2024-04-04 2박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 412,543<br>
+                    선수금 : 0<br>
+                    잔액: 1,104,345<br>
+                    비고:<br> 
+                    이메일: joey_yee_88@hotmail.com / 말레이시아 1박<br> 
+                    가족 3명 (성인 2명, 아이 1명) / 왓츠앱<br> 
+                    객실 여권 안내완<br> 
+
+                    5일 체크아웃 후 신201로 룸무브<br> 
+
+                    아침 5~6시에 체크아웃 할 예정 짐은 다 싼 후에 프론트에서 짐 회수후 보관 뒤 새로운 방으로 이동요망<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jaiKiyotakaModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_5.room_number}} {{ room_5.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Jai Kiyotaka<br>
+                    2024-04-06-2024-04-07 1박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 212,543<br>
+                    선수금 : 0<br>
+                    잔액: 1,104,345<br>
+                    비고:<br> 
+                    +852 6465 4395/ 왓츠앱 / 홍콩 7박  / 전체청소 5일<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="marcelinaLiantoModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_6.room_number}} {{ room_6.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Marcelina Lianto<br>
+                    2024-04-04-2024-04-05 1박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 212,543<br>
+                    선수금 : 0<br>
+                    잔액: 1,104,345<br>
+                    비고:<br> 
+                    +86 176 2126 0302 / 왓츠앱 / 미국2박 / 친구3명<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="joeyChinModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ room_7.room_number}} {{ room_7.type}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: rgba(0,0,0,0.3); height: 70px; padding:10px; font-weight: bold;">
+                    Joey Chin<br>
+                    2024-04-03-2024-04-05 2박
+                </div>
+                <div style="padding:10px; font-size: 13px;">
+                    객실료 : 212,543<br>
+                    선수금 : 0<br>
+                    잔액: 1,104,345<br>
+                    비고:<br> 
+                    이메일: joey_yee_88@hotmail.com / 말레이시아 2박<br>
+                    가족 3명 (성인 2명, 아이 1명) / 왓츠앱<br>
+                    객실 여권 안내완<br> 
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("jameKim").addEventListener("click", function() {
+      // 모달 표시
+        $('#jameKimModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("paulPatrick").addEventListener("click", function() {
+      // 모달 표시
+        $('#paulPatrickModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("nakashima").addEventListener("click", function() {
+      // 모달 표시
+        $('#nakashimaModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("ulrikGrönvall").addEventListener("click", function() {
+      // 모달 표시
+        $('#ulrikGrönvallModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("jaiKiyotaka").addEventListener("click", function() {
+      // 모달 표시
+        $('#jaiKiyotakaModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("huiLim").addEventListener("click", function() {
+      // 모달 표시
+        $('#huiLimModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("marcelinaLianto").addEventListener("click", function() {
+      // 모달 표시
+        $('#marcelinaLiantoModal').modal('show');
+    });
+</script>
+
+<script>
+    // 클릭 이벤트 리스너 추가
+    document.getElementById("joeyChin").addEventListener("click", function() {
+      // 모달 표시
+        $('#joeyChinModal').modal('show');
+    });
+</script>
 
 
 {% endblock %}
