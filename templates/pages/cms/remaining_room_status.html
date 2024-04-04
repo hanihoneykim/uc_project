@@ -1,0 +1,156 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">잔여 객실 현황</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">잔여 객실 현황</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <!-- 테이블 해더 -->
+                <!--
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 table_header">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="dataTable_filter" class="dataTables_filter">
+                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th colspan="3" style="background-color: rgba(0,0,0,0.05); text-align: center;">객실</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/01</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/02</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/03</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/04</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/05</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/06</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">04/07</th>
+                        </tr>
+                        <tr>
+                            <th style="background-color: rgba(0,0,0,0.05);">코드</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">객실타입</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">객실 수 </th>
+                            <th style="background-color: rgba(0,0,0,0.05);">월</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">화</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">수</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">목</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">금</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">토</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">일</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);"></th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">잔여 합계</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">31</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">2</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">4</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">3</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">0</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">5</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">3</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">2</th>
+                        </tr>
+                        <tr>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);"></th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">예약된 객실수</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);"></th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">31</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">30</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">20</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">23</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">21</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">19</th>
+                            <th style="background-color: rgba(186, 158, 255, 0.302);">26</th>
+                        </tr>
+                        <tr>
+                            <th style="background-color: rgba(0,0,0,0.05);"></th>
+                            <th style="background-color: rgba(0,0,0,0.05);">점유율</th>
+                            <th style="background-color: rgba(0,0,0,0.05);"></th>
+                            <th style="background-color: rgba(0,0,0,0.05);">89.5</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">90.2</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">89.3</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">94.7</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">95.2</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">96.3</th>
+                            <th style="background-color: rgba(0,0,0,0.05);">97.1</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>FST</td>
+                            <td>스위트</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>FTS</td>
+                            <td>스위트노윈도우</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>DTS</td>
+                            <td>마루스위트</td>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>FCM</td>
+                            <td>패밀리스위트</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+{% endblock %}
