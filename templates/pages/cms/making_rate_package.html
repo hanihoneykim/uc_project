@@ -282,7 +282,38 @@
                     </table>
                 </div>
             </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <span>서비스코드 설정</span>
+            <button type="button" class="btn btn-secondary btn-sm mx-4"><i class="fas fa-fw fa-cog mr-2"></i>관리</button>
         </div>
+        <div class="card-body justify-content-center">
+            채널을 통해서 발생한 예약의 서비스코드를 분개하려면 [관리]버튼을 클릭하여 서비스코드를 입력해주세요.<br>
+            해당 기능 설정 시 상품그룹에 매핑된 상품으로 예약이 들어올경우 설정한 서비스코드와 객실료를 분개하여 시스템에 전송합니다.
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            채널에 요금전송 시 최저요금 / 최대 요금을 지정하면, 설정된 요금 이하 / 이상으로 요금을 입력했을 경우 전송에러가 발생합니다.
+        </div>
+        <div class="card-body justify-content-center">
+            <div>
+                <div class="form-check">
+                    <span class="mr-3">최저 요금 설정</span>
+                    <input type="text" value="200,000">
+                </div>
+                <div class="form-check mt-3">
+                    <span class="mr-3">최고 요금 설정</span>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn btn-block mt-5">저장</button>
 
 
 </div>
