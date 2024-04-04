@@ -25,3 +25,19 @@ class Channel(models.Model):
     channel_name = models.CharField(max_length=20, null=True, blank=True)
     integration_status = models.BooleanField(default=False)
     integration_date = models.DateField(null=True, blank=True)
+
+
+class CMSReservation(models.Model):
+    reservation = models.ForeignKey(
+        "pms.Reservation",
+        null=True,
+        related_name="cms_reservations",
+        on_delete=models.SET_NULL,
+    )
+    channel = models.CharField(max_length=20, null=True, blank=True)
+    channel_reservation_number = models.CharField(max_length=20, null=True, blank=True)
+    pms_reservation_number = models.CharField(max_length=20, null=True, blank=True)
+    pms_status = models.CharField(max_length=20, null=True, blank=True)
+    cms_status = models.CharField(max_length=20, null=True, blank=True)
+    actual_check_out_date = models.DateField(null=True, blank=True)
+    transmission_result = models.BooleanField(default=False)
