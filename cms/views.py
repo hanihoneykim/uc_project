@@ -173,3 +173,19 @@ class FAQListView(generics.ListAPIView):
                 "faq_5": faq_5,
             },
         )
+
+
+class SalesAnalysis(generics.ListAPIView):
+    template_name = "pages/cms/sales_analysis.html"
+
+    def get(self, request):
+        user = request.user
+        channel = Channel.objects.all()
+        paginator = Paginator(channel, 30)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/cms/sales_analysis.html",
+            {"user": user, "paging": paging},
+        )

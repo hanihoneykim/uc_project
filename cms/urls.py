@@ -62,4 +62,9 @@ urlpatterns = [
         views.FAQListView.as_view(),
         name="faq",
     ),
+    path(
+        "report/sales_analysis",
+        views.SalesAnalysis.as_view(),
+        name="sales_analysis",
+    ),
 ]
