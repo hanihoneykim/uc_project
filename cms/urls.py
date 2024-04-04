@@ -52,4 +52,9 @@ urlpatterns = [
         views.RemainigRoomStatus.as_view(),
         name="remaining_room_status",
     ),
+    path(
+        "report/system_management_history",
+        views.SystemManagementHistory.as_view(),
+        name="system_management_history",
+    ),
 ]
