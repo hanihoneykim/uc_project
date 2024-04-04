@@ -51,3 +51,11 @@ class History(models.Model):
     process = models.CharField(max_length=20, null=True, blank=True)
     process_content = models.CharField(max_length=20, null=True, blank=True)
     user_ip = models.CharField(max_length=20, null=True, blank=True)
+
+
+class FAQ(models.Model):
+    category = models.CharField(max_length=20, null=True, blank=True)
+    title = models.CharField(max_length=50, null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
+    link_title = models.CharField(max_length=20, null=True, blank=True)
+    link = models.CharField(max_length=50, null=True, blank=True)
