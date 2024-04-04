@@ -55,6 +55,14 @@ class RatePackageCreate(generics.ListCreateAPIView):
         )
 
 
+class ApplyingRatePackage(generics.ListAPIView):
+    template_name = "pages/cms/applying_rate_package.html"
+
+    def get(self, request):
+        user = request.user
+        return render(request, "pages/cms/applying_rate_package.html", {"user": user})
+
+
 class ChannelInformationConfiguration(generics.ListAPIView):
     template_name = "pages/cms/channel_information_configuration.html"
 

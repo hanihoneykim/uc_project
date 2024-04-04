@@ -23,6 +23,11 @@ urlpatterns = [
         name="making_rate_package",
     ),
     path(
+        "channel/applying_rate_package",
+        views.ApplyingRatePackage.as_view(),
+        name="applying_rate_package",
+    ),
+    path(
         "channel/channel_information_configuration",
         views.ChannelInformationConfiguration.as_view(),
         name="channel_information_configuration",
