@@ -1,0 +1,131 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">예약 목록</h1>
+
+    <div class="row">
+
+        <div class="m-4">
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    당일 판매 실적
+                </div>
+                <div class="card-body" style="width: 100%;">
+                    <span style="margin-right: 30px;">정상 예약</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 30px;" value="2">
+                    <span style="margin-right: 30px;">|</span>
+                    <span style="margin-right: 30px;">취소 예약</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 30px;" value="2">
+                    <span style="margin-right: 30px;">|</span>
+                    <span style="margin-right: 30px;">객실 수</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 30px;" value="2">
+                    <span style="margin-right: 30px;">|</span>
+                    <span style="margin-right: 30px;">박수</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 30px;" value="10">
+                    <span style="margin-right: 30px;">|</span>
+                    <span style="margin-right: 30px;">매출</span>
+                    <input type="text" style="width: 80px; font-size: 15px; margin-right: 30px;" value="3,795,760">
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">예약 목록</h6>
+        </div>
+        <div class="card-body">
+            <div style="overflow-x: auto;"></div>
+                <div class="table-responsive">
+                
+                <!-- 테이블 해더 -->
+                <!--
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 table_header">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="dataTable_filter" class="dataTables_filter">
+                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="white-space: nowrap;">상태</th>
+                                <th style="white-space: nowrap;">예약번호</th>
+                                <th style="white-space: nowrap;">채널예약번호</th>
+                                <th style="white-space: nowrap;">PMS예약번호</th>
+                                <th style="white-space: nowrap;">예약확인</th>
+                                <th style="white-space: nowrap;">채널명</th>
+                                <th style="white-space: nowrap;">객실번호</th>
+                                <th style="white-space: nowrap;">고객명</th>
+                                <th style="white-space: nowrap;">입실일자</th>
+                                <th style="white-space: nowrap;">퇴실일자</th>
+                                <th style="white-space: nowrap;">실퇴실일자</th>
+                                <th style="white-space: nowrap;">예약일자</th>
+                                <th style="white-space: nowrap;">박수</th>
+                                <th style="white-space: nowrap;">객실타입</th>
+                                <th style="white-space: nowrap;">객실료</th>
+                                <th style="white-space: nowrap;">서비스</th>
+                                <th style="white-space: nowrap;">총객실료</th>
+                                <th style="white-space: nowrap;">전송결과</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in paging %}
+                            <tr>
+                                <td style="white-space: nowrap;">{{ item.reservation.reservation_status }}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.reservation_number }}</td>
+                                <td style="white-space: nowrap;">{{ item.channel_reservation_number }}</td>
+                                <td style="white-space: nowrap;">{{ item.pms_reservation_number }}</td>
+                                <td style="white-space: nowrap;"><button type="button" class="btn btn-secondary btn-sm">예약확인</button></td>
+                                <td style="white-space: nowrap;">{{ item.channel}}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.room.room_number}}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.guest_name}}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.check_in_date}}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.check_out_date}}</td>
+                                <td style="white-space: nowrap;">{{ item.actual_check_out_date}}</td>
+                                <td style="white-space: nowrap;"> {{ item.reservation.reservation_date }}</td>
+                                <td style="white-space: nowrap;"> {{ item.reservation.length_of_stay }}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.room.type }}</td>
+                                <td style="white-space: nowrap;">{{ item.reservation.room.price }}</td>
+                                <td style="white-space: nowrap;"> {{ item.reservation.services }}</td>
+                                <td style="white-space: nowrap;"> {{ item.reservation.total_room_charge }}</td>
+                                <td style="white-space: nowrap;">
+                                    {% if item.transmission_result %}
+                                        전송 완료
+                                    {% else %}
+                                        전송 실패
+                                    {% endif %}
+                                </td>
+                                
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+
+{% endblock %}
