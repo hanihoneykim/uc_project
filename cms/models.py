@@ -41,3 +41,13 @@ class CMSReservation(models.Model):
     cms_status = models.CharField(max_length=20, null=True, blank=True)
     actual_check_out_date = models.DateField(null=True, blank=True)
     transmission_result = models.BooleanField(default=False)
+
+
+class History(models.Model):
+    user_id = models.CharField(max_length=20, null=True, blank=True)
+    user_name = models.CharField(max_length=20, null=True, blank=True)
+    connection_date = models.DateTimeField(auto_now=True)
+    program_name = models.CharField(max_length=20, null=True, blank=True)
+    process = models.CharField(max_length=20, null=True, blank=True)
+    process_content = models.CharField(max_length=20, null=True, blank=True)
+    user_ip = models.CharField(max_length=20, null=True, blank=True)
