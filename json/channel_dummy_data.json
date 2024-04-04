@@ -1,0 +1,58 @@
+[
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "Agoda",
+            "integration_status": true,
+            "integration_date": "2024-04-15"
+        }
+    },
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "Airbnb",
+            "integration_status": true,
+            "integration_date": "2024-04-22"
+        }
+    },
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "Booking.com",
+            "integration_status": true,
+            "integration_date": "2024-04-09"
+        }
+    },
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "Expedia",
+            "integration_status": true,
+            "integration_date": "2024-04-03"
+        }
+    },
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "TRIP.COM",
+            "integration_status": true,
+            "integration_date": "2024-04-27"
+        }
+    },
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "부킹엔진(BE)",
+            "integration_status": true,
+            "integration_date": "2024-04-18"
+        }
+    },
+    {
+        "model": "cms.Channel",
+        "fields": {
+            "channel_name": "야놀자",
+            "integration_status": true,
+            "integration_date": "2024-04-12"
+        }
+    }
+]

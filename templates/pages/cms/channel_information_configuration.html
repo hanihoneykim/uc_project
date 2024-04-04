@@ -1,0 +1,84 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">채널 정보 설정</h1>
+                    </div>
+                    
+                    <div class="row">
+
+                        <div class="m-4">
+
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <button class="btn btn-primary" onclick="callChannelInfo()">연동 채널 정보 호출</button>
+                                </div>
+                                <div class="card-body">
+                                    최종 업데이트일자 : 2023-09-13 (수) 16:56:41<br>
+                                    연동된 채널에 등록 되어 있는 모든 객실타입과 플랜이 호출됩니다. 이후 동기화된 OTA 데이터(객실타입 / 플랜) 를 설정 해야 합니다.
+                                </div>
+                            </div>
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <button class="btn btn-primary" onclick="callChannelInfo()">객실 및 상품 관리</button>
+                                </div>
+                                <div class="card-body">
+                                    최종 업데이트일자 : 2023-12-29 (금) 12:19:57<br>
+                                    [연동 채널 호출] 되어있는 객실과 상품을 맵핑시켜야 CMS상에서 데이터가 OTA로 전송됩니다.<br><br>
+                                </div>
+                            </div>
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <button class="btn btn-primary" onclick="callChannelInfo()">서비스 상품 매핑</button>
+                                </div>
+                                <div class="card-body">
+                                    최종 업데이트일자 : 2023-12-29 (금) 12:19:57<br>
+                                    [연동 채널 호출] 되어있는 객실과 상품을 맵핑시켜야 CMS상에서 데이터가 OTA로 전송됩니다.<br><br>
+                                </div>
+                            </div>
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <button class="btn btn-primary" onclick="callChannelInfo()">객실 순서 변경</button>
+                                </div>
+                                <div class="card-body">
+                                    객실이 매핑되어있는 상태를 한 눈에 볼 수 있고, 노출되는 순서를 변경할 수 있습니다.
+                                </div>
+                            </div>
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <button class="btn btn-primary" onclick="callChannelInfo()">상품 순서 변경</button>
+                                </div>
+                                <div class="card-body">
+                                    상품이 매핑되어있는 상태를 한 눈에 볼 수 있고, 노출되는 순서를 변경할 수 있습니다.
+                                </div>
+                            </div>
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <button class="btn btn-primary" onclick="callChannelInfo()">프로덕트 코드 속성</button>
+                                </div>
+                                <div class="card-body">
+                                    채널 프로덕트 코드 전송정보를 설정할 수 있습니다. (Rate Plan V2)
+                                </div>
+                            </div>
+
+                        
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+{% endblock %}
