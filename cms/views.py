@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics, status
-from .models import RatePackage, Channel
+from pms.models import Reservation
+from django.core.paginator import Paginator
+from .models import RatePackage, Channel, CMSReservation
 
 
 class RateManagementListView(generics.ListCreateAPIView):
@@ -97,4 +99,20 @@ class RemainingRoomAvailability(generics.ListAPIView):
             request,
             "pages/cms/remaining_room_availability.html",
             {"user": user},
+        )
+
+
+class CMSReservationListView(generics.ListAPIView):
+    template_name = "pages/cms/cms_reservation_list.html"
+
+    def get(self, request):
+        user = request.user
+        cms_reservations = CMSReservation.objects.all()
+        paginator = Paginator(cms_reservations, 30)
+        page_number = request.GET.get("page", "1")
+        paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/cms/cms_reservation_list.html",
+            {"user": user, "paging": paging},
         )
