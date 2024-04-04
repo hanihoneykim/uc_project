@@ -47,4 +47,9 @@ urlpatterns = [
         views.CMSReservationListView.as_view(),
         name="cms_reservation_list",
     ),
+    path(
+        "report/remaining_room_status",
+        views.RemainigRoomStatus.as_view(),
+        name="remaining_room_status",
+    ),
 ]

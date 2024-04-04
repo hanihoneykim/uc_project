@@ -116,3 +116,19 @@ class CMSReservationListView(generics.ListAPIView):
             "pages/cms/cms_reservation_list.html",
             {"user": user, "paging": paging},
         )
+
+
+class RemainigRoomStatus(generics.ListAPIView):
+    template_name = "pages/cms/remaining_room_status.html"
+
+    def get(self, request):
+        user = request.user
+        # cms_reservations = CMSReservation.objects.all()
+        # paginator = Paginator(cms_reservations, 30)
+        # page_number = request.GET.get("page", "1")
+        # paging = paginator.get_page(page_number)
+        return render(
+            request,
+            "pages/cms/remaining_room_status.html",
+            {"user": user},
+        )
