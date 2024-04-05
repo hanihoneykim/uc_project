@@ -94,26 +94,5 @@
             "check_in_time": "00:46:31",
             "check_in_out_status": "in"
         }
-    },
-    {
-        "model": "pms.CheckInOutStatus",
-        "fields": {
-            "reservation": "5327e5519a62426fa503023ac1e18e75",
-            "check_in_time": "05:47:31"
-        }
-    },
-    {
-        "model": "pms.CheckInOutStatus",
-        "fields": {
-            "reservation": "8208276c7d4442f483c86b1e46b0e516",
-            "check_in_time": "00:42:31"
-        }
-    },
-    {
-        "model": "pms.CheckInOutStatus",
-        "fields": {
-            "reservation": "1aa2553d3afd4399a06e78e21e7aa843",
-            "check_in_time": "00:46:31"
-        }
     }
 ]
