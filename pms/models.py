@@ -79,6 +79,12 @@ class Reservation(models.Model):
     verifier = models.CharField(
         max_length=20, choices=MIA_CHOICES, blank=True, null=True
     )
+    advance_payment = models.DecimalField(
+        max_digits=10, decimal_places=0, null=True
+    )  # 선수금
+    balance_due = models.DecimalField(
+        max_digits=10, decimal_places=0, null=True
+    )  # 잔액
 
 
 class CheckInOutStatus(models.Model):
