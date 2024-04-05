@@ -81,7 +81,7 @@
                             <td><span class="badge bg-info">{{ item.room.status }}</span></td>
                             <td>{{ item.check_in_date }} - {{ item.check_out_date }}</td>
                             <td>{{item.room.price}}</td>
-                            <td><button type="button" class="btn btn-light btn-sm detailButton" data-toggle="modal" data-target="#detailModal" data-guest-name="{{ item.guest_name }}" data-check-in-date="{{ item.check_in_date }}" data-check-out-date="{{ item.check_out_date }}">상세보기</button></td>
+                            <td><button type="button" class="btn btn-light btn-sm detailButton" data-toggle="modal" data-target="#detailModal" data-remarks="{{ item.remarks }}" data-balance-due="{{ item.balance_due }}" data-advance-payment="{{ item.advance_payment}}" data-room-price="{{ item.room.price }}"  data-room-type="{{ item.room.type }}" data-room-number="{{ item.room.room_number }}" data-guest-name="{{ item.guest_name }}" data-check-in-date="{{ item.check_in_date }}" data-check-out-date="{{ item.check_out_date }}">상세보기</button></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -93,20 +93,56 @@
 </div>
 
 <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="detailModalLabel">상세 정보</h5>
+            <span id="roomNumber" style="font-size: 28px; font-weight: bold;"></span>
+            <span id="roomType" style="font-size: 28px; font-weight: bold; margin-left: 10px;"></span>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body">
                 <!-- 상세 정보 표시 -->
-                <p>이름: <span id="guestName"></span></p>
-                <p>체크인 날짜: <span id="checkInDate"></span></p>
-                <p>체크아웃 날짜: <span id="checkOutDate"></span></p>
+                <p><span id="guestName" style="font-weight: bold;"></span></p>
+                <p><span id="checkInDate" style="font-weight: bold;"></span> <span class="mx-1" style="font-weight: bold;">-</span> <span id="checkOutDate" style="font-weight: bold;"></span></p>
+                <hr>
+                <div style="padding:3px 8px 5px 8px; font-size: 13px;">
+                    <p><span style="margin-right: 10px;">객실료 :</span><span id="roomPrice"></span></p>
+                    <p><span style="margin-right: 10px;">선수금 :</span><span id="advancePayment">0</span></p>
+                    <p><span style="margin-right: 10px;">잔액 :</span><span id="balanceDue">0</span></p>
+                    <p style="margin-bottom: 30px;"><span style="margin-right: 10px;">비고 :</span><span id="remarks">0</span></p>
+                    
+                    <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>퇴실</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>투숙객 정보 수정</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>내부 메모</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>객실 변경</span>
+                </div>
+                <hr>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>매출 등록</span>
+                </div>
+                <div style="padding:5px 10px 5px 10px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                    <i class="fas fa-angle-right"></i>
+                    <span>빌 이체</span>
+                </div>
+                </div>
             </div>
+
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
             </div>
@@ -122,13 +158,26 @@
         var guestName = button.data('guest-name'); // 게스트 이름
         var checkInDate = button.data('check-in-date'); // 체크인 날짜
         var checkOutDate = button.data('check-out-date'); // 체크아웃 날짜
+        var roomNumber = button.data('room-number'); // 방 번호
+        var roomType = button.data('room-type'); // 방 타입
+        var roomPrice = button.data('room-price');
+        var advancePayment = button.data('advance-payment');
+        var balanceDue = button.data('balance-due');
+        var remarks = button.data('remarks');
 
         // 모달에 데이터를 표시합니다.
         var modal = $(this);
         modal.find('#guestName').text(guestName);
         modal.find('#checkInDate').text(checkInDate);
         modal.find('#checkOutDate').text(checkOutDate);
+        modal.find('#roomNumber').text(roomNumber);
+        modal.find('#roomType').text(roomType);
+        modal.find('#roomPrice').text(roomPrice);
+        modal.find('#advancePayment').text(advancePayment);
+        modal.find('#balanceDue').text(balanceDue);
+        modal.find('#remarks').text(remarks);
     });
+
 </script>
 
 
