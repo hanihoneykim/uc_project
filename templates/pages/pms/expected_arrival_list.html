@@ -314,41 +314,49 @@
 
 <script>
     // 상세보기 모달이 열릴 때 실행되는 함수
-    $('#detailModal').on('show.bs.modal', function (event) {
-        // 클릭한 버튼에 연결된 데이터를 가져옵니다.
-        var button = $(event.relatedTarget); // 클릭한 버튼
-        var guestName = button.data('guest-name'); // 게스트 이름
-        var checkInDate = button.data('check-in-date'); // 체크인 날짜
-        var checkOutDate = button.data('check-out-date'); // 체크아웃 날짜
-        var roomNumber = button.data('room-number'); // 방 번호
-        var roomType = button.data('room-type'); // 방 타입
-        var roomPrice = button.data('room-price'); // 객실료
-        var advancePayment = button.data('advance-payment'); // 선수금
-        var balanceDue = button.data('balance-due'); // 잔액
-        var remarks = button.data('remarks'); // 비고
-        var phoneNumber = button.data('phone-number'); // 비고
-        var vendorName = button.data('vendor-name'); // 비고
+    $(document).ready(function() {
+    // DataTables 설정
+    $('#example').DataTable();
 
-        // 모달에 데이터를 표시합니다.
-        var modal = $(this);
-        modal.find('#guestNameInput').val(guestName);
-        modal.find('#checkInDateInput').val(checkInDate);
-        modal.find('#checkOutDateInput').val(checkOutDate);
-        modal.find('#roomNumberInput').val(roomNumber);
-        modal.find('#roomTypeInput').val(roomType);
-        modal.find('#roomPriceInput').val(roomPrice);
-        modal.find('#advancePaymentInput').val(advancePayment);
-        modal.find('#balanceDueInput').val(balanceDue);
-        modal.find('#remarksInput').val(remarks);
-        modal.find('#phoneNumberInput').val(phoneNumber);
-        modal.find('#vendorNameInput').val(vendorName);
-        modal.find('.roomPriceText').text(roomPrice);
-        modal.find('.roomTypeText').text(roomType);
-        modal.find('.checkInDateText').text(checkInDate);
+    // DataTables에서 행 클릭 이벤트 설정
+    $('#example tbody').on('click', 'tr', function () {
+        try {
+            console.log("hi")
 
+            // 클릭한 행에 연결된 데이터를 가져옵니다.
+            var guestName = $(this).data('guest-name');
+            var checkInDate = $(this).data('check-in-date');
+            var checkOutDate = $(this).data('check-out-date');
+            var roomNumber = $(this).data('room-number');
+            var roomType = $(this).data('room-type');
+            var roomPrice = $(this).data('room-price');
+            var advancePayment = $(this).data('advance-payment');
+            var balanceDue = $(this).data('balance-due');
+            var remarks = $(this).data('remarks');
+            var phoneNumber = $(this).data('phone-number');
+            var vendorName = $(this).data('vendor-name');
+
+            // 모달에 데이터를 표시합니다.
+            var modal = $('#detailModal');
+            modal.find('#guestNameInput').val(guestName);
+            modal.find('#checkInDateInput').val(checkInDate);
+            modal.find('#checkOutDateInput').val(checkOutDate);
+            modal.find('#roomNumberInput').val(roomNumber);
+            modal.find('#roomTypeInput').val(roomType);
+            modal.find('#roomPriceInput').val(roomPrice);
+            modal.find('#advancePaymentInput').val(advancePayment);
+            modal.find('#balanceDueInput').val(balanceDue);
+            modal.find('#remarksInput').val(remarks);
+            modal.find('#phoneNumberInput').val(phoneNumber);
+            modal.find('#vendorNameInput').val(vendorName);
+            modal.find('.roomPriceText').text(roomPrice);
+            modal.find('.roomTypeText').text(roomType);
+            modal.find('.checkInDateText').text(checkInDate);
+        } catch (error) {
+            console.error('데이터 실패:', error);
+        }
     });
-
-
+});
 </script>
 
 
