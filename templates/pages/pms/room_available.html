@@ -38,14 +38,16 @@
                         </div>
                     </div>
                     <span style="margin-right: 20px; font-weight: bold;">상태</span>
-                    <div class="dropdown" style="margin-right: 80px;">
-                        <button class="btn btn-sm btn-secondary dropdown-toggle" style="margin-right: 40px; width: 110px;" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <div class="dropdown" style="margin-right: 40px;">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" style="width: 110px;" type="button" data-toggle="dropdown" aria-expanded="false">
                             확정예약
                         </button>
                         <div class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">확정예약</a></li>
                         </div>
                     </div>
+                    <button class="btn btn-light" style="width: 80px; margin-right: 10px;">조회</button>
+
 
                 </div>
             </div>
@@ -114,7 +116,7 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
+                        <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModal">
                             <td>FST</td>
                             <td>3</td>
                             <td>0</td>
@@ -125,7 +127,8 @@
                             <td>0</td>
                             <td>0</td>
                         </tr>
-                        <tr>
+                        <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModalTwo">
+
                             <td>FTS</td>
                             <td>2</td>
                             <td>0</td>
@@ -136,7 +139,8 @@
                             <td>0</td>
                             <td>0</td>
                         </tr>
-                        <tr>
+                        <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModalThree">
+
                             <td>DTS</td>
                             <td>6</td>
                             <td>1</td>
@@ -147,7 +151,8 @@
                             <td>3</td>
                             <td>3</td>
                         </tr>
-                        <tr>
+                        <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModalFour">
+
                             <td>FCM</td>
                             <td>3</td>
                             <td>1</td>
@@ -163,9 +168,410 @@
             </div>
         </div>
     </div>
-
 </div>
-<!-- /.container-fluid -->
+
+<!-- Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span style="font-size: 20px; font-weight: bold; margin-right: 20px;">객실 상태 현황</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- 왼쪽 칸 -->
+                    <div class="col-md-8">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: rgba(0,0,0,0.05);">상태</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실타입</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실 번호 </th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">고객명</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">입실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">퇴실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModal">
+                                    <td>DF</td>
+                                    <td>FST</td>
+                                    <td>0301</td>
+                                    <td>임유경</td>
+                                    <td>2024-04-01</td>
+                                    <td>2024-04-05</td>
+                                    <td>1250492</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 오른쪽 칸 -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="card mb-3" style="width: 95%;">
+                                <div class="card-header">
+                                    <h6 class="card-title">객실 판매 상태</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <!-- 항목 부분 -->
+                                                <div style="text-align: right;">
+                                                    <p style="font-size: 13px;">총 객실 수 :</p>
+                                                    <p style="font-size: 13px;">예상판매 :</p>
+                                                    <p style="font-size: 13px;">판매가능 :</p>
+                                                    <p style="font-size: 13px;">연박 :</p>
+                                                    <p style="font-size: 13px;">예약 :</p>
+                                                    <p style="font-size: 13px;">내부이용 :</p>
+                                                    <p style="font-size: 13px;">고장 :</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <!-- 인풋 부분 -->
+                                                <div>
+                                                    <input id="roomNumberInput" style="font-weight: bold; width:100px; height: 25px; margin-bottom: 10px;" readonly><br>
+                                                    <input id="guestNameInput" style="font-weight: bold; width:100px; margin-bottom: 10px; height: 25px;" readonly><br>
+                                                    <input id="checkInDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="checkOutDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="roomPriceInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="advancePaymentInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="balanceDueInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailModalTwo" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span style="font-size: 20px; font-weight: bold; margin-right: 20px;">객실 상태 현황</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- 왼쪽 칸 -->
+                    <div class="col-md-8">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: rgba(0,0,0,0.05);">상태</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실타입</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실 번호 </th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">고객명</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">입실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">퇴실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModal">
+                                    <td>DF</td>
+                                    <td>FTS</td>
+                                    <td>0205</td>
+                                    <td>김하은</td>
+                                    <td>2024-04-02</td>
+                                    <td>2024-04-03</td>
+                                    <td>1250492</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 오른쪽 칸 -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="card mb-3" style="width: 95%;">
+                                <div class="card-header">
+                                    <h6 class="card-title">객실 판매 상태</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <!-- 항목 부분 -->
+                                                <div style="text-align: right;">
+                                                    <p style="font-size: 13px;">총 객실 수 :</p>
+                                                    <p style="font-size: 13px;">예상판매 :</p>
+                                                    <p style="font-size: 13px;">판매가능 :</p>
+                                                    <p style="font-size: 13px;">연박 :</p>
+                                                    <p style="font-size: 13px;">예약 :</p>
+                                                    <p style="font-size: 13px;">내부이용 :</p>
+                                                    <p style="font-size: 13px;">고장 :</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <!-- 인풋 부분 -->
+                                                <div>
+                                                    <input id="roomNumberInput" style="font-weight: bold; width:100px; height: 25px; margin-bottom: 10px;" readonly><br>
+                                                    <input id="guestNameInput" style="font-weight: bold; width:100px; margin-bottom: 10px; height: 25px;" readonly><br>
+                                                    <input id="checkInDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="checkOutDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="roomPriceInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="advancePaymentInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="balanceDueInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailModalThree" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span style="font-size: 20px; font-weight: bold; margin-right: 20px;">객실 상태 현황</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- 왼쪽 칸 -->
+                    <div class="col-md-8">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: rgba(0,0,0,0.05);">상태</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실타입</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실 번호 </th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">고객명</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">입실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">퇴실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModal">
+                                    <td>DF</td>
+                                    <td>DTS</td>
+                                    <td>0105</td>
+                                    <td>박진아</td>
+                                    <td>2024-04-02</td>
+                                    <td>2024-04-07</td>
+                                    <td>1250492</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 오른쪽 칸 -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="card mb-3" style="width: 95%;">
+                                <div class="card-header">
+                                    <h6 class="card-title">객실 판매 상태</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <!-- 항목 부분 -->
+                                                <div style="text-align: right;">
+                                                    <p style="font-size: 13px;">총 객실 수 :</p>
+                                                    <p style="font-size: 13px;">예상판매 :</p>
+                                                    <p style="font-size: 13px;">판매가능 :</p>
+                                                    <p style="font-size: 13px;">연박 :</p>
+                                                    <p style="font-size: 13px;">예약 :</p>
+                                                    <p style="font-size: 13px;">내부이용 :</p>
+                                                    <p style="font-size: 13px;">고장 :</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <!-- 인풋 부분 -->
+                                                <div>
+                                                    <input id="roomNumberInput" style="font-weight: bold; width:100px; height: 25px; margin-bottom: 10px;" readonly><br>
+                                                    <input id="guestNameInput" style="font-weight: bold; width:100px; margin-bottom: 10px; height: 25px;" readonly><br>
+                                                    <input id="checkInDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="checkOutDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="roomPriceInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="advancePaymentInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="balanceDueInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailModalFour" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span style="font-size: 20px; font-weight: bold; margin-right: 20px;">객실 상태 현황</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- 왼쪽 칸 -->
+                    <div class="col-md-8">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: rgba(0,0,0,0.05);">상태</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실타입</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">객실 번호 </th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">고객명</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">입실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">퇴실일자</th>
+                                    <th style="background-color: rgba(0,0,0,0.05);">번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="cursor: pointer;" data-toggle="modal" data-target="#detailModal">
+                                    <td>DF</td>
+                                    <td>FCM</td>
+                                    <td>0505</td>
+                                    <td>Jame Kim</td>
+                                    <td>2024-04-03</td>
+                                    <td>2024-04-06</td>
+                                    <td>1250492</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 오른쪽 칸 -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="card mb-3" style="width: 95%;">
+                                <div class="card-header">
+                                    <h6 class="card-title">객실 판매 상태</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <!-- 항목 부분 -->
+                                                <div style="text-align: right;">
+                                                    <p style="font-size: 13px;">총 객실 수 :</p>
+                                                    <p style="font-size: 13px;">예상판매 :</p>
+                                                    <p style="font-size: 13px;">판매가능 :</p>
+                                                    <p style="font-size: 13px;">연박 :</p>
+                                                    <p style="font-size: 13px;">예약 :</p>
+                                                    <p style="font-size: 13px;">내부이용 :</p>
+                                                    <p style="font-size: 13px;">고장 :</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <!-- 인풋 부분 -->
+                                                <div>
+                                                    <input id="roomNumberInput" style="font-weight: bold; width:100px; height: 25px; margin-bottom: 10px;" readonly><br>
+                                                    <input id="guestNameInput" style="font-weight: bold; width:100px; margin-bottom: 10px; height: 25px;" readonly><br>
+                                                    <input id="checkInDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="checkOutDateInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="roomPriceInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="advancePaymentInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    <input id="balanceDueInput" style="width:100px; margin-bottom: 10px; height: 25px; font-size: 13px" readonly><br>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 상세보기 모달이 열릴 때 실행되는 함수
+    $('#detailModal').on('show.bs.modal', function (event) {
+        var modal = $(this);
+    });
+</script>
+
+<script>
+    // 상세보기 모달이 열릴 때 실행되는 함수
+    $('#detailModalTwo').on('show.bs.modal', function (event) {
+        var modal = $(this);
+    });
+</script>
+
+<script>
+    // 상세보기 모달이 열릴 때 실행되는 함수
+    $('#detailModalThree').on('show.bs.modal', function (event) {
+        var modal = $(this);
+    });
+</script>
+
+<script>
+    // 상세보기 모달이 열릴 때 실행되는 함수
+    $('#detailModalFour').on('show.bs.modal', function (event) {
+        var modal = $(this);
+    });
+</script>
+
 
 
 {% endblock %}
