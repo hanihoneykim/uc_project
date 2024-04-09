@@ -73,7 +73,7 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:8080",
-    "3.133.35.154",
+    "http://3.133.35.154",
 )
 
 ROOT_URLCONF = "config.urls"
