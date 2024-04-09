@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -58,6 +59,7 @@ INTERNAL_APPS = [
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # CORS control
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -91,10 +93,30 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+# .env 파일 로드
+load_dotenv()
+
+# 환경 변수 불러오기
+DB_PASSWORD = os.getenv("CUSTOM_DB_PASSWORD", "default_password")
+DB_HOST = os.getenv("CUSTOM_DB_HOST", "default_host")
+
+# Django 설정에 환경 변수 적용
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",  # engine: mysql
+        "NAME": "demo_schema",  # DB Name
+        "USER": "admin",  # DB User
+        "PASSWORD": DB_PASSWORD,  # Password
+        "HOST": DB_HOST,  # 생성한 데이터베이스 엔드포인트
+        "PORT": "3306",  # 데이터베이스 포트,
+        "OPTIONS": {"init_command": 'SET sql_mode="STRICT_TRANS_TABLES"'},
     }
 }
 
