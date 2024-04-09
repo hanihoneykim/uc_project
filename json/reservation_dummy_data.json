@@ -2,6 +2,7 @@
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"33afbfc222e649458354c9239f8894d8",
             "group_id": null,
             "guest_name": "Ulrik Grönvall",
             "check_in_date": "2024-03-29",
@@ -19,15 +20,13 @@
             "special_services": null,
             "folio_number": "24054809",
             "phone_number": "0)046***2197",
-            "remarks": null,
-            "room_number": "202",
-            "room_type": "DTS",
-            "room_rate": 100000
+            "remarks": null
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"425de2077ae545aba66deed98e2fb149",
             "group_id": null,
             "guest_name": "Hui Ming Lim",
             "check_in_date": "2024-03-28",
@@ -45,15 +44,13 @@
             "special_services": null,
             "folio_number": "23051476",
             "phone_number": null,
-            "remarks": null,
-            "room_number": "201",
-            "room_type": "DTS",
-            "room_rate": 200000
+            "remarks": null
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"4ba2af6fdbc9449d8495cebb315b3067",
             "group_id": null,
             "guest_name": "Kong Hei Ching",
             "check_in_date": "2024-03-31",
@@ -71,15 +68,13 @@
             "special_services": null,
             "folio_number": "24056282",
             "phone_number": null,
-            "remarks": "2박 / 드림 / 12LCO제공",
-            "room_number": "303",
-            "room_type": "VDT",
-            "room_rate": 150000
+            "remarks": "2박 / 드림 / 12LCO제공"
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"582b57c03f8c4e5fac4d0e2d9d73c17a",
             "group_id": null,
             "guest_name": "Shino OBA",
             "check_in_date": "2024-04-02",
@@ -97,15 +92,13 @@
             "special_services": null,
             "folio_number": "24062411",
             "phone_number": null,
-            "remarks": "일반 2박 / 라인 / 카라 3 / ",
-            "room_number": "204",
-            "room_type": "DTS",
-            "room_rate": 100000
+            "remarks": "일반 2박 / 라인 / 카라 3 / "
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"7d046463de014cc7a75bc82bec18e3c6",
             "group_id": null,
             "guest_name": "Andrew Kim",
             "check_in_date": "2024-04-02",
@@ -129,6 +122,7 @@
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"b00b24e9f5244cd1a4dfafedfdea7a7e",
             "group_id": null,
             "guest_name": "李孺悉",
             "check_in_date": "2024-03-31",
@@ -146,15 +140,13 @@
             "special_services": null,
             "folio_number": "24062226",
             "phone_number": null,
-            "remarks": "+886 901 021 322 / 대만 2박 / 라인 / 가카7 / 이번 추가 결제 및 샌프란 시확\n\n4/1 오후에 시확함.",
-            "room_number": "205",
-            "room_type": "DTS",
-            "room_rate": 100000
+            "remarks": "+886 901 021 322 / 대만 2박 / 라인 / 가카7 / 이번 추가 결제 및 샌프란 시확\n\n4/1 오후에 시확함."
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"b092621a72e640e287259ad5b287a348",
             "group_id": null,
             "guest_name": "KWAN LOK SHUM",
             "check_in_date": "2024-03-28",
@@ -172,15 +164,13 @@
             "special_services": null,
             "folio_number": "24057486",
             "phone_number": null,
-            "remarks": "카카오 / 드림 3박 / 28층, 401 석탄\n\n3/28 밤에 한번 더 업데이트 필요함, 이번에는 모두 객실과 함께 새로운 요청받음",
-            "room_number": "207",
-            "room_type": "VDT",
-            "room_rate": 150000
+            "remarks": "카카오 / 드림 3박 / 28층, 401 석탄\n\n3/28 밤에 한번 더 업데이트 필요함, 이번에는 모두 객실과 함께 새로운 요청받음"
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"b383c8efbbd2464c80a025811c449830",
             "group_id": null,
             "guest_name": "Marcelina Lianto",
             "check_in_date": "2024-04-02",
@@ -198,15 +188,13 @@
             "special_services": null,
             "folio_number": "24062379",
             "phone_number": null,
-            "remarks": "+6584474701 / 싱가포르 2박 / 라인 / 석 3개 /",
-            "room_number": "502",
-            "room_type": "DTS",
-            "room_rate": 200000
+            "remarks": "+6584474701 / 싱가포르 2박 / 라인 / 석 3개 /"
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"ec3ea351704f46c8b63e8f663cfe51db",
             "group_id": null,
             "guest_name": "Yu Chong Kai",
             "check_in_date": "2024-04-01",
@@ -224,15 +212,13 @@
             "special_services": null,
             "folio_number": "24059388",
             "phone_number": null,
-            "remarks": "+886926580238 / 대만 2박 / 라인 / 석 4",
-            "room_number": "207",
-            "room_type": "DTS",
-            "room_rate": 100000
+            "remarks": "+886926580238 / 대만 2박 / 라인 / 석 4"
         }
     },
     {
         "model": "pms.Reservation",
         "fields": {
+            "room":"fc491839a28a4672a12c330cd6d9a944",
             "group_id": null,
             "guest_name": "JAI KIYOTAKA",
             "check_in_date": "2024-03-29",
@@ -250,10 +236,7 @@
             "special_services": null,
             "folio_number": "24055217",
             "phone_number": null,
-            "remarks": "인도네시아 2박 / 더블 / 18F \n\n28일 20시에 여태까지 예약된 것들 다 수정함",
-            "room_number": "602",
-            "room_type": "DTS",
-            "room_rate": 150000
+            "remarks": "인도네시아 2박 / 더블 / 18F \n\n28일 20시에 여태까지 예약된 것들 다 수정함"
         }
     }
 ]
